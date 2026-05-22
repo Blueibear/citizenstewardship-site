@@ -1,64 +1,104 @@
-# Astro Starter Kit: Blog
+# Citizen Stewardship (Astro)
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+Citizen Stewardship is a citizen-created public review website for two civic reform proposals. The site is built with Astro and deployed as a static output for Cloudflare Pages.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## Project structure
 
-<!-- dash-content-start -->
-
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
-
-<!-- dash-content-end -->
-
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+```text
+/
+├─ public/
+│  ├─ assets/
+│  │  └─ pdfs/
+│  │     ├─ democratic-renewal-full-proposal.pdf
+│  │     └─ feasible-democratic-reform-proposal.pdf
+│  ├─ favicon.svg
+│  └─ fonts/
+├─ src/
+│  ├─ components/
+│  │  ├─ BaseHead.astro
+│  │  ├─ Footer.astro
+│  │  └─ Header.astro
+│  ├─ layouts/
+│  │  └─ SiteLayout.astro
+│  ├─ pages/
+│  │  ├─ 404.astro
+│  │  ├─ about.astro
+│  │  ├─ community.astro
+│  │  ├─ contact.astro
+│  │  ├─ index.astro
+│  │  ├─ privacy.astro
+│  │  ├─ proposal-one.astro
+│  │  ├─ proposal-two.astro
+│  │  └─ submit.astro
+│  └─ styles/
+│     └─ global.css
+├─ astro.config.mjs
+├─ package.json
+└─ README.md
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+## Proposal PDFs
 
-## 🚀 Project Structure
+Keep PDFs in `public/assets/pdfs/` with these exact filenames:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `democratic-renewal-full-proposal.pdf`
+- `feasible-democratic-reform-proposal.pdf`
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+These are served at:
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+- `/assets/pdfs/democratic-renewal-full-proposal.pdf`
+- `/assets/pdfs/feasible-democratic-reform-proposal.pdf`
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Local development
 
-## 🧞 Commands
+```bash
+npm install
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+Open the local URL printed by Astro (typically `http://localhost:4321`).
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+## Local production build
 
-## 👀 Want to learn more?
+```bash
+npm run build
+```
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Deploy to Cloudflare Pages (GitHub integration)
 
-## Credit
+1. In Cloudflare Dashboard, open **Workers & Pages**.
+2. Click **Create** → **Pages**.
+3. Connect GitHub and select `citizen-stewardship-site`.
+4. Use these settings:
+   - **Framework preset:** Astro
+   - **Build command:** `npm run build`
+   - **Output directory:** `dist`
+   - **Node version:** 22 or newer (if prompted)
+5. Deploy.
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Add custom domain
+
+1. Open the Pages project in Cloudflare.
+2. Go to **Custom domains**.
+3. Add `citizenstewardship.org`.
+4. Optionally add `www.citizenstewardship.org`.
+
+## Configure Giscus (comment placeholders)
+
+1. Make the repository public.
+2. Enable GitHub Discussions.
+3. Create categories:
+   - Proposal One Discussion
+   - Proposal Two Discussion
+   - Public Proposals
+   - Site Improvements
+4. Go to `https://giscus.app`.
+5. Generate scripts for each target page.
+6. Replace the placeholder blocks in:
+   - `src/pages/proposal-one.astro`
+   - `src/pages/proposal-two.astro`
+   - `src/pages/community.astro`
+
+## Security note
+
+Do not commit secrets, passwords, API keys, Microsoft credentials, Apple credentials, Cloudflare cookies, or Cloudflare tokens.
