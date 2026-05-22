@@ -2,7 +2,14 @@
 import PageHero from '../components/PageHero.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
-const discussionsUrl = 'https://github.com/Blueibear/citizenstewardship-site/discussions';
+const publicSubmissionsUrl =
+	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/public-submissions';
+const approvedSubmissionsUrl =
+	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions';
+const siteImprovementsUrl =
+	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements';
+const generalCivicDiscussionUrl =
+	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion';
 const privateNoteUrl =
 	'mailto:contact@citizenstewardship.org?subject=Citizen%20Stewardship%20proposal%20suggestion';
 
@@ -71,8 +78,10 @@ const requiredFormat = [
 		lede="Use this page to prepare proposed changes, additions, missing pillars, corrections, or better wording for public review."
 	>
 		<div slot="actions" class="hero-actions">
-			<a class="button primary" href={discussionsUrl}>Submit through GitHub Discussions</a>
-			<a class="button" href="/community/#approved-public-submissions">View Approved Submissions</a>
+			<a class="button primary" href={publicSubmissionsUrl}>
+				Submit through the public discussion board
+			</a>
+			<a class="button" href={approvedSubmissionsUrl}>View Approved Submissions</a>
 			<a class="button" href={privateNoteUrl}>Email a private note</a>
 		</div>
 	</PageHero>
@@ -131,6 +140,12 @@ const requiredFormat = [
 				<p>
 					Strong criticism is welcome if it is specific, constructive, and honest.
 				</p>
+				<p>
+					Use <a href={siteImprovementsUrl}>Site Improvements</a> for page clarity,
+					accessibility, document links, navigation, or repository maintenance. Use
+					<a href={generalCivicDiscussionUrl}>General Civic Discussion</a> for related civic
+					reform ideas that do not fit the submission format.
+				</p>
 			</aside>
 		</div>
 	</section>
@@ -146,8 +161,10 @@ const requiredFormat = [
 					</p>
 				</div>
 				<div class="button-row">
-					<a class="button primary" href={discussionsUrl}>Submit through GitHub Discussions</a>
-					<a class="button" href="/community/#approved-public-submissions">View Approved Submissions</a>
+					<a class="button primary" href={publicSubmissionsUrl}>
+						Submit through the public discussion board
+					</a>
+					<a class="button" href={approvedSubmissionsUrl}>View Approved Submissions</a>
 					<a class="button" href={privateNoteUrl}>Email a private note</a>
 				</div>
 			</div>

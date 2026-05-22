@@ -2,37 +2,57 @@
 import PageHero from '../components/PageHero.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
-const discussionsUrl = 'https://github.com/Blueibear/citizenstewardship-site/discussions';
+const discussionCategories = {
+	proposalOne:
+		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-one-discussion',
+	proposalTwo:
+		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-two-discussion',
+	publicSubmissions:
+		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/public-submissions',
+	approvedSubmissions:
+		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions',
+	siteImprovements:
+		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements',
+	generalCivic:
+		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion',
+};
+
 const forumSections = [
 	{
 		title: 'Proposal One Discussion',
 		description:
 			'Discuss the full democratic renewal proposal, challenge assumptions, and suggest section-specific revisions.',
+		href: discussionCategories.proposalOne,
 	},
 	{
 		title: 'Proposal Two Discussion',
 		description:
 			'Review the feasible reform package, identify practical barriers, and propose stronger implementation paths.',
+		href: discussionCategories.proposalTwo,
 	},
 	{
 		title: 'Public Submissions',
 		description:
 			'Post proposed additions, corrections, missing pillars, or evidence-backed criticism for public review.',
+		href: discussionCategories.publicSubmissions,
 	},
 	{
 		title: 'Approved Submissions',
 		description:
 			'Read submissions that have been reviewed for seriousness, relevance, nonpartisanship, and basic factual grounding.',
+		href: discussionCategories.approvedSubmissions,
 	},
 	{
 		title: 'Site Improvements',
 		description:
 			'Suggest improvements to page clarity, accessibility, document links, wording, navigation, or repository maintenance.',
+		href: discussionCategories.siteImprovements,
 	},
 	{
 		title: 'General Civic Discussion',
 		description:
 			'Discuss civic reform ideas that relate to the project but do not fit one proposal or submission category.',
+		href: discussionCategories.generalCivic,
 	},
 ];
 ---
@@ -46,8 +66,8 @@ const forumSections = [
 		lede="Discuss the proposals, suggest changes, challenge assumptions, and read public submissions in a serious civic forum."
 	>
 		<div slot="actions" class="hero-actions">
-			<a class="button primary" href={discussionsUrl}>Open GitHub Discussions</a>
-			<a class="button" href="#approved-public-submissions">Approved submissions</a>
+			<a class="button primary" href={discussionCategories.generalCivic}>Open general discussion</a>
+			<a class="button" href={discussionCategories.approvedSubmissions}>Approved submissions</a>
 		</div>
 	</PageHero>
 
@@ -84,14 +104,14 @@ const forumSections = [
 			<div class="section-header">
 				<h2>Forum sections</h2>
 				<p>
-					These links point to the repository Discussions area for now. They can later be
-					replaced with category-specific Discussion links after categories are created.
+					These links point directly to the public GitHub Discussions categories for each
+					proposal, submission path, and site improvement topic.
 				</p>
 			</div>
 			<div class="forum-grid">
 				{
 					forumSections.map((section) => (
-						<a class="forum-card" href={discussionsUrl}>
+						<a class="forum-card" href={section.href}>
 							<span class="meta-line">GitHub Discussions</span>
 							<h3>{section.title}</h3>
 							<p>{section.description}</p>
@@ -115,7 +135,7 @@ const forumSections = [
 				</p>
 				<p>
 					This area is intentionally structured so manually maintained approved submission
-					cards can replace the placeholder when submissions are ready to publish.
+					cards can replace this summary when submissions are ready to publish.
 				</p>
 			</div>
 			<aside class="approved-placeholder">
@@ -124,7 +144,10 @@ const forumSections = [
 					Use the Submit page to prepare a proposal suggestion for public review through
 					GitHub Discussions.
 				</p>
-				<a class="button primary" href="/submit">Prepare a submission</a>
+				<a class="button primary" href={discussionCategories.approvedSubmissions}>
+					View Approved Submissions
+				</a>
+				<a class="button" href="/submit">Prepare a submission</a>
 			</aside>
 		</div>
 	</section>
