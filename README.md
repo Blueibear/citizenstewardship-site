@@ -1,64 +1,100 @@
-# Astro Starter Kit: Blog
+# Citizen Stewardship
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+Citizen Stewardship is a static public review website where one citizen is publishing two democratic reform draft proposals for public reading, criticism, and improvement.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## Folder structure
 
-<!-- dash-content-start -->
-
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
-
-<!-- dash-content-end -->
-
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+```
+/
+  index.html
+  proposal-one.html
+  proposal-two.html
+  community.html
+  submit.html
+  about.html
+  contact.html
+  privacy.html
+  404.html
+  README.md
+  assets/
+    css/styles.css
+    js/main.js
+    pdfs/
+      democratic-renewal-full-proposal.pdf
+      feasible-democratic-reform-proposal.pdf
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+## Required PDFs and exact filenames
 
-## 🚀 Project Structure
+Place these files in `assets/pdfs/`:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. `assets/pdfs/democratic-renewal-full-proposal.pdf`
+2. `assets/pdfs/feasible-democratic-reform-proposal.pdf`
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+If these files are missing, the embedded viewers and download links will not work.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+## Preview locally
 
-Any static assets, like images, can be placed in the `public/` directory.
+Open `index.html` directly in your browser, or run a simple local server:
 
-## 🧞 Commands
+```bash
+python3 -m http.server 8000
+```
 
-All commands are run from the root of the project, from a terminal:
+Then open http://localhost:8000.
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+## Deploy with Cloudflare Pages (GitHub)
 
-## 👀 Want to learn more?
+1. Cloudflare Dashboard
+2. Workers & Pages
+3. Create
+4. Pages
+5. Connect GitHub
+6. Select repo `citizen-stewardship-site`
+7. Framework preset: **None**
+8. Build command: **leave blank**
+9. Build output directory: `/` or blank/root
+10. Deploy
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Add custom domain
 
-## Credit
+1. Open the Pages project
+2. Custom domains
+3. Set up a domain
+4. Add `citizenstewardship.org`
+5. Add `www.citizenstewardship.org` if desired
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Configure Giscus
+
+1. Make the repo public.
+2. Enable GitHub Discussions.
+3. Create categories:
+   - Proposal One Discussion
+   - Proposal Two Discussion
+   - Public Proposals
+   - Site Improvements
+4. Go to https://giscus.app.
+5. Generate the Giscus script.
+6. Replace the placeholder Giscus blocks in:
+   - `proposal-one.html`
+   - `proposal-two.html`
+   - `community.html`
+
+## Update the site
+
+1. Edit HTML/CSS/JS files.
+2. Commit changes.
+3. Push to GitHub.
+4. Cloudflare Pages redeploys from the connected branch.
+
+## Troubleshooting
+
+- **PDF not showing**: Confirm file names and paths exactly match `assets/pdfs/*.pdf`.
+- **Download links broken**: Verify links use root-relative paths beginning with `/assets/pdfs/`.
+- **Comments not showing**: Confirm GitHub Discussions is enabled and Giscus script is installed correctly.
+- **Custom domain not active**: Verify DNS records and domain assignment in Cloudflare Pages.
+- **Cloudflare human verification**: Must be completed manually in Cloudflare by the human user.
+
+## Security note
+
+Do not commit secrets, passwords, API keys, Microsoft credentials, Apple credentials, Cloudflare cookies, or Cloudflare tokens.
