@@ -17,7 +17,7 @@ const corePrinciples = [
 	'Nonpartisanship',
 	'Equality for all citizens',
 	'Citizens over corporations',
-	'Removing money from politics',
+	'Money out of politics',
 	'Strengthening public education',
 	'Revising the tax code',
 	'Anti-corruption',
@@ -26,6 +26,16 @@ const corePrinciples = [
 	'Secular government',
 	'Practical feasibility',
 	'Factual grounding',
+];
+
+const alignmentChecklist = [
+	'Does it strengthen ordinary citizens over corporations or insiders?',
+	'Does it reduce corruption, hidden influence, or money in politics?',
+	'Does it protect equal rights and voting rights?',
+	'Does it improve public education, civic understanding, or transparency?',
+	'Does it make government more accountable and understandable?',
+	'Does it consider tax fairness, economic stability, or public responsibility?',
+	'Does it avoid partisan revenge and focus on durable reform?',
 ];
 
 const shouldSubmit = [
@@ -107,6 +117,16 @@ const requiredFormat = [
 					readers enough context to evaluate the idea fairly within the American civic and
 					legal system.
 				</p>
+
+				<h2>What submissions should align with</h2>
+				<p>
+					Submissions do not have to agree with every existing proposal, but they should
+					generally support or seriously engage with one or more of the project's core
+					pillars.
+				</p>
+				<ul class="check-list">
+					{alignmentChecklist.map((item) => <li>{item}</li>)}
+				</ul>
 
 				<h2>What should be submitted</h2>
 				<ul class="check-list">

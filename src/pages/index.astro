@@ -1,5 +1,6 @@
 ---
 import PageHero from '../components/PageHero.astro';
+import PillarGrid from '../components/PillarGrid.astro';
 import ProposalCard from '../components/ProposalCard.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { SITE_DESCRIPTION } from '../consts';
@@ -75,6 +76,21 @@ const proposalTwoPdf = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
 	</section>
 
 	<section class="section surface-band">
+		<div class="container">
+			<div class="section-header">
+				<h2>Core Pillars</h2>
+				<p>
+					These proposals are built around a set of core principles for American democratic
+					renewal. They are not about handing power from one party to another. They are
+					about making public power harder to buy, harder to hide, harder to abuse, and
+					easier for ordinary people to understand, challenge, and improve.
+				</p>
+			</div>
+			<PillarGrid />
+		</div>
+	</section>
+
+	<section class="section">
 		<div class="container content-grid">
 			<div class="prose">
 				<h2>About this project and proposals</h2>

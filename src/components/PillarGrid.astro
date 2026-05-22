@@ -1,0 +1,33 @@
+---
+interface Props {
+	compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+
+const pillars = [
+	'Citizens over corporations',
+	'Money out of politics',
+	'Voting rights and election protection',
+	'Anti-corruption and public accountability',
+	'Public education and civic education',
+	'Tax code reform',
+	'Equality for all citizens',
+	'Secular government',
+	'Transparency and plain-language government',
+	'Citizen participation and review',
+	'Media and platform accountability',
+	'Antitrust and anti-monopoly reform',
+	'Executive power limits',
+	'Court ethics and institutional safeguards',
+	'Digital rights and privacy',
+	'Labor, housing, healthcare, and economic stability',
+	'Criminal justice reform',
+	'Climate and environmental responsibility',
+	'Truth, history, and reconciliation',
+];
+---
+
+<ul class={compact ? 'pillar-grid compact' : 'pillar-grid'} aria-label="Citizen Stewardship core pillars">
+	{pillars.map((pillar) => <li class="pillar-card"><span>{pillar}</span></li>)}
+</ul>

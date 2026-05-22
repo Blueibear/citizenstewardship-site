@@ -1,5 +1,6 @@
 ---
 import PageHero from '../components/PageHero.astro';
+import PillarGrid from '../components/PillarGrid.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 
@@ -48,6 +49,35 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 					hard criticism.
 				</p>
 			</aside>
+		</div>
+	</section>
+
+	<section class="section surface-band">
+		<div class="container">
+			<div class="section-header">
+				<h2>What Citizen Stewardship Stands For</h2>
+				<p>
+					The core pillars are the values used to judge whether a reform belongs in this
+					project. A proposal should generally strengthen public accountability, ordinary
+					citizen power, equality, transparency, education, and limits on corporate capture.
+				</p>
+			</div>
+			<div class="content-grid">
+				<div class="prose">
+					<p>
+						Citizen Stewardship is not trying to hand public power from one party to
+						another. It is meant to ask whether public systems can be made harder to buy,
+						harder to hide, harder to abuse, and easier for people to understand and repair.
+					</p>
+					<p>
+						Disagreement is welcome. Suggestions should still be compatible with equal
+						rights, nonpartisanship, public accountability, and democratic repair. A useful
+						reform can challenge an existing proposal, but it should do so in a way that
+						builds a more durable and fair public system.
+					</p>
+				</div>
+				<PillarGrid compact />
+			</div>
 		</div>
 	</section>
 </SiteLayout>
