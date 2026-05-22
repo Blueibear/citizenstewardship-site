@@ -34,7 +34,7 @@ const shouldSubmit = [
 	'Better wording.',
 	'Legal or practical concerns.',
 	'Evidence-backed criticism.',
-	'Examples from states, cities, countries, or institutions.',
+	'Examples from U.S. states, cities, public agencies, courts, schools, or comparable democratic institutions.',
 	'Tax reform suggestions.',
 	'Public education reform suggestions.',
 	'Anti-corruption and campaign-finance reforms.',
@@ -71,17 +71,29 @@ const requiredFormat = [
 
 <SiteLayout
 	title="Submit"
-	description="Official submission instructions for Citizen Stewardship proposal changes, additions, corrections, and public review."
+	description="Official submission instructions for Citizen Stewardship proposal changes, additions, corrections, and public review focused on U.S. democratic reform."
 >
 	<PageHero
 		title="Submit a Proposal Suggestion"
-		lede="Use this page to prepare proposed changes, additions, missing pillars, corrections, or better wording for public review."
+		lede="Use this page to prepare proposed changes, additions, missing pillars, corrections, or better wording for public review of U.S. democratic reform proposals."
 	>
 		<div slot="actions" class="hero-actions">
-			<a class="button primary" href={publicSubmissionsUrl}>
+			<a
+				class="button primary"
+				href={publicSubmissionsUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
 				Submit through the public discussion board
 			</a>
-			<a class="button" href={approvedSubmissionsUrl}>View Approved Submissions</a>
+			<a
+				class="button"
+				href={approvedSubmissionsUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				View Approved Submissions
+			</a>
 			<a class="button" href={privateNoteUrl}>Email a private note</a>
 		</div>
 	</PageHero>
@@ -92,7 +104,8 @@ const requiredFormat = [
 				<p class="lead-block">
 					Submissions are for improving the proposals, not scoring partisan points. A strong
 					submission identifies a specific problem, proposes a concrete improvement, and gives
-					readers enough context to evaluate the idea fairly.
+					readers enough context to evaluate the idea fairly within the American civic and
+					legal system.
 				</p>
 
 				<h2>What should be submitted</h2>
@@ -141,9 +154,14 @@ const requiredFormat = [
 					Strong criticism is welcome if it is specific, constructive, and honest.
 				</p>
 				<p>
-					Use <a href={siteImprovementsUrl}>Site Improvements</a> for page clarity,
-					accessibility, document links, navigation, or repository maintenance. Use
-					<a href={generalCivicDiscussionUrl}>General Civic Discussion</a> for related civic
+					Use
+					<a href={siteImprovementsUrl} target="_blank" rel="noopener noreferrer">
+						Site Improvements
+					</a> for page clarity, accessibility, document links, navigation, or repository
+					maintenance. Use
+					<a href={generalCivicDiscussionUrl} target="_blank" rel="noopener noreferrer">
+						General Civic Discussion
+					</a> for related civic
 					reform ideas that do not fit the submission format.
 				</p>
 			</aside>
@@ -161,10 +179,22 @@ const requiredFormat = [
 					</p>
 				</div>
 				<div class="button-row">
-					<a class="button primary" href={publicSubmissionsUrl}>
+					<a
+						class="button primary"
+						href={publicSubmissionsUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Submit through the public discussion board
 					</a>
-					<a class="button" href={approvedSubmissionsUrl}>View Approved Submissions</a>
+					<a
+						class="button"
+						href={approvedSubmissionsUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View Approved Submissions
+					</a>
 					<a class="button" href={privateNoteUrl}>Email a private note</a>
 				</div>
 			</div>

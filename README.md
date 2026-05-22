@@ -1,15 +1,16 @@
 # Citizen Stewardship
 
-Citizen Stewardship is a static Astro website for publishing nonpartisan, citizen-created public proposals about democratic renewal and practical civic reform.
+Citizen Stewardship is a nonpartisan, citizen-created public project for American democratic renewal, practical reform, and civic responsibility.
 
-The site is intentionally static:
+The repo remains an Astro static site deployed through Cloudflare Pages at `https://citizenstewardship.org`. It does not include:
 
-- no custom backend
-- no analytics
-- no secrets
-- no client-side tracking
+- custom backend functions
+- analytics
+- secrets
+- database code
+- client-side tracking
 
-Public discussion runs through GitHub Discussions. The contact page includes a Formspree placeholder form shell, but it cannot receive messages until the placeholder Formspree action URL is replaced with a working form URL.
+Public discussion runs through GitHub Discussions. The public contact email is `contact@citizenstewardship.org`, and the contact page uses the Formspree endpoint currently configured in `src/pages/contact.astro`.
 
 ## Pages
 
@@ -47,6 +48,8 @@ The public categories are:
 - [Site Improvements](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements)
 - [General Civic Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion)
 
+Site links to these GitHub Discussions categories should use `target="_blank"` and `rel="noopener noreferrer"` so they open in a new browser tab safely.
+
 ## Submission Moderation Workflow
 
 - New suggestions go into Public Submissions.
@@ -56,19 +59,21 @@ The public categories are:
 - Approved submissions can later be manually listed in the Approved Public Submissions area on the Community page.
 - Public discussion should remain constructive, nonpartisan, and grounded in improving the proposals.
 
+## Site Images and Metadata
+
+The shared Citizen Stewardship graphic is stored at:
+
+- `public/assets/images/citizen-stewardship-social.png`
+
+The site uses that image in the header, homepage, and Open Graph/social sharing metadata. The public social image URL is:
+
+- `https://citizenstewardship.org/assets/images/citizen-stewardship-social.png`
+
+The browser tab icon remains a simplified `public/favicon.svg` mark because the full social graphic is too detailed to read well at tiny favicon sizes. A simplified PNG favicon can be added later if a raster icon is needed.
+
 ## Contact Form Setup
 
-The Contact page includes a real HTML form structure, but the form action is a placeholder:
-
-```html
-https://formspree.io/f/REPLACE_WITH_FORM_ID
-```
-
-Before treating the form as live:
-
-1. Replace the placeholder Formspree action URL in `src/pages/contact.astro`.
-2. Test the form submission end to end.
-3. Until then, use `contact@citizenstewardship.org`.
+Do not change the contact form endpoint unless contact handling is intentionally being updated. The public contact email is `contact@citizenstewardship.org`.
 
 ## Local Development
 
@@ -99,5 +104,6 @@ src/components/     Shared Astro components
 src/layouts/        Site layout wrapper
 src/pages/          Static routes
 src/styles/         Global CSS
+public/assets/images/ Shared public graphics
 public/assets/pdfs/ Public proposal PDFs
 ```

@@ -59,15 +59,29 @@ const forumSections = [
 
 <SiteLayout
 	title="Community"
-	description="Public forum hub for discussing Citizen Stewardship proposals, submissions, and site improvements."
+	description="Public forum hub for discussing Citizen Stewardship proposals, submissions, and site improvements for American democratic renewal."
 >
 	<PageHero
 		title="Public Forum Hub"
-		lede="Discuss the proposals, suggest changes, challenge assumptions, and read public submissions in a serious civic forum."
+		lede="Discuss the proposals, suggest changes, challenge assumptions, and read public submissions in a serious civic forum focused on democratic renewal in the United States."
 	>
 		<div slot="actions" class="hero-actions">
-			<a class="button primary" href={discussionCategories.generalCivic}>Open general discussion</a>
-			<a class="button" href={discussionCategories.approvedSubmissions}>Approved submissions</a>
+			<a
+				class="button primary"
+				href={discussionCategories.generalCivic}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Open general discussion
+			</a>
+			<a
+				class="button"
+				href={discussionCategories.approvedSubmissions}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Approved submissions
+			</a>
 		</div>
 	</PageHero>
 
@@ -78,8 +92,8 @@ const forumSections = [
 				<p>
 					This discussion space is intended to be nonpartisan, evidence-aware,
 					rights-respecting, and focused on improving the proposals. Readers should be able
-					to compare ideas, pressure-test claims, propose better wording, and identify legal
-					or practical limits without being pushed into party loyalty.
+					to compare ideas, pressure-test claims, propose better wording, and identify U.S.
+					legal or practical limits without being pushed into party loyalty.
 				</p>
 				<p>
 					Disagreement is welcome. Strong criticism is useful when it is specific,
@@ -111,7 +125,12 @@ const forumSections = [
 			<div class="forum-grid">
 				{
 					forumSections.map((section) => (
-						<a class="forum-card" href={section.href}>
+						<a
+							class="forum-card"
+							href={section.href}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<span class="meta-line">GitHub Discussions</span>
 							<h3>{section.title}</h3>
 							<p>{section.description}</p>
@@ -144,7 +163,12 @@ const forumSections = [
 					Use the Submit page to prepare a proposal suggestion for public review through
 					GitHub Discussions.
 				</p>
-				<a class="button primary" href={discussionCategories.approvedSubmissions}>
+				<a
+					class="button primary"
+					href={discussionCategories.approvedSubmissions}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					View Approved Submissions
 				</a>
 				<a class="button" href="/submit">Prepare a submission</a>

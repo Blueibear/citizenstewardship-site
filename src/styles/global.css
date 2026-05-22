@@ -150,16 +150,22 @@ li + li {
 	text-decoration: none;
 }
 
-.brand-mark {
-	display: grid;
+.brand-logo {
+	display: block;
 	width: 42px;
 	height: 42px;
+	flex: 0 0 42px;
 	border: 1px solid var(--line);
-	border-left: 5px solid var(--green);
+	border-radius: 7px;
 	background: var(--surface);
-	color: var(--blue);
-	font-size: 0.78rem;
-	place-items: center;
+	overflow: hidden;
+}
+
+.brand-logo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .nav-links {
@@ -365,6 +371,31 @@ li + li {
 	border-radius: var(--radius);
 	background: var(--surface);
 	box-shadow: var(--shadow);
+}
+
+.hero-social-card {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.hero-social-card::after {
+	position: absolute;
+	inset: 0;
+	border: 1px solid rgba(255, 255, 255, 0.72);
+	content: "";
+	pointer-events: none;
+}
+
+.hero-social-card img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: cover;
 }
 
 .document-sheet {
@@ -830,6 +861,12 @@ li + li {
 
 	.brand {
 		font-size: 1.05rem;
+	}
+
+	.brand-logo {
+		width: 38px;
+		height: 38px;
+		flex-basis: 38px;
 	}
 
 	.nav-links {
