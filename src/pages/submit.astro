@@ -1,51 +1,156 @@
 ---
 import PageHero from '../components/PageHero.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+
+const discussionsUrl = 'https://github.com/Blueibear/citizenstewardship-site/discussions';
+const privateNoteUrl =
+	'mailto:contact@citizenstewardship.org?subject=Citizen%20Stewardship%20proposal%20suggestion';
+
+const corePrinciples = [
+	'Nonpartisanship',
+	'Equality for all citizens',
+	'Citizens over corporations',
+	'Removing money from politics',
+	'Strengthening public education',
+	'Revising the tax code',
+	'Anti-corruption',
+	'Voting rights',
+	'Transparency',
+	'Secular government',
+	'Practical feasibility',
+	'Factual grounding',
+];
+
+const shouldSubmit = [
+	'Specific proposed changes to Proposal One or Proposal Two.',
+	'Missing reform pillars.',
+	'Better wording.',
+	'Legal or practical concerns.',
+	'Evidence-backed criticism.',
+	'Examples from states, cities, countries, or institutions.',
+	'Tax reform suggestions.',
+	'Public education reform suggestions.',
+	'Anti-corruption and campaign-finance reforms.',
+	'Ways to strengthen equality and rights protections.',
+	'Ways to reduce corporate capture.',
+];
+
+const shouldNotSubmit = [
+	'Partisan slogans with no reform substance.',
+	'Attacks on ordinary citizens based on race, religion, gender, sexuality, disability, nationality, or political identity.',
+	'Calls for violence.',
+	'Doxxing or private personal information.',
+	'Conspiracy claims without evidence.',
+	'Corporate lobbying language disguised as citizen reform.',
+	'Spam, fundraising, or self-promotion.',
+	'Proposals that remove rights from one group to benefit another.',
+];
+
+const requiredFormat = [
+	'Title',
+	'Which proposal or section it affects',
+	'Problem being addressed',
+	'Proposed change',
+	'Why it is necessary',
+	'Immediate benefits',
+	'Risks or downsides',
+	'Long-term benefits',
+	'Who may support it',
+	'Who may oppose it',
+	'Sources or examples',
+	'Suggested wording if available',
+];
 ---
 
 <SiteLayout
 	title="Submit"
-	description="Submission guidance for Citizen Stewardship without adding backend forms or data collection."
+	description="Official submission instructions for Citizen Stewardship proposal changes, additions, corrections, and public review."
 >
 	<PageHero
-		title="Prepare a Submission"
-		lede="This static site does not collect submissions online. Use this page as a checklist for serious feedback, revisions, or local discussion notes."
-	/>
+		title="Submit a Proposal Suggestion"
+		lede="Use this page to prepare proposed changes, additions, missing pillars, corrections, or better wording for public review."
+	>
+		<div slot="actions" class="hero-actions">
+			<a class="button primary" href={discussionsUrl}>Submit through GitHub Discussions</a>
+			<a class="button" href="/community/#approved-public-submissions">View Approved Submissions</a>
+			<a class="button" href={privateNoteUrl}>Email a private note</a>
+		</div>
+	</PageHero>
 
 	<section class="section tight">
 		<div class="container content-grid">
 			<div class="prose">
-				<p class="privacy-note">
-					No form is provided here because the site has no backend and does not collect personal
-					information.
+				<p class="lead-block">
+					Submissions are for improving the proposals, not scoring partisan points. A strong
+					submission identifies a specific problem, proposes a concrete improvement, and gives
+					readers enough context to evaluate the idea fairly.
 				</p>
-				<h2>What strong feedback includes</h2>
-				<ul>
-					<li>The proposal name and section you are addressing.</li>
-					<li>The exact sentence, claim, or reform mechanism you want reviewed.</li>
-					<li>A suggested revision in plain language.</li>
-					<li>Legal, historical, budget, administrative, or civic evidence where available.</li>
-					<li>A clear distinction between objection, improvement, and open question.</li>
+
+				<h2>What should be submitted</h2>
+				<ul class="check-list">
+					{shouldSubmit.map((item) => <li>{item}</li>)}
 				</ul>
 
-				<h2>What to avoid</h2>
-				<ul>
-					<li>Private personal information.</li>
-					<li>Unsourced factual claims presented as settled proof.</li>
-					<li>Party talking points that do not address the reform mechanism.</li>
-					<li>Threats, harassment, or attempts to expose private people.</li>
+				<h2>What should not be submitted</h2>
+				<ul class="warning-list">
+					{shouldNotSubmit.map((item) => <li>{item}</li>)}
 				</ul>
 			</div>
 			<aside class="callout">
-				<h3>Suggested format</h3>
-				<ol>
-					<li>Proposal and section.</li>
-					<li>Issue or opportunity.</li>
-					<li>Why it matters.</li>
-					<li>Suggested revision.</li>
-					<li>Sources or examples.</li>
-				</ol>
+				<h3>Core principles</h3>
+				<p>Submissions should reinforce the project's operating principles.</p>
+				<ul class="tag-list" aria-label="Citizen Stewardship core principles">
+					{corePrinciples.map((principle) => <li>{principle}</li>)}
+				</ul>
 			</aside>
+		</div>
+	</section>
+
+	<section class="section surface-band">
+		<div class="container content-grid">
+			<div class="prose">
+				<h2>Required submission format</h2>
+				<p>
+					Use this structure so readers can understand the proposal, test the reasoning, and
+					compare likely benefits against risks.
+				</p>
+				<ol class="format-list">
+					{requiredFormat.map((item) => <li>{item}</li>)}
+				</ol>
+			</div>
+			<aside class="info-panel">
+				<h3>Review process</h3>
+				<p>
+					Submissions are reviewed for relevance, seriousness, nonpartisanship, rights
+					compatibility, and basic factual grounding.
+				</p>
+				<p>
+					Approval does not mean automatic endorsement. Approved submissions will be listed in
+					the Approved Submissions area in the Community section.
+				</p>
+				<p>
+					Strong criticism is welcome if it is specific, constructive, and honest.
+				</p>
+			</aside>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="submit-actions-panel">
+				<div>
+					<h2>Ready to share a suggestion?</h2>
+					<p>
+						Public suggestions should go through GitHub Discussions. Use email only for a
+						private note or a concern that should not be posted publicly.
+					</p>
+				</div>
+				<div class="button-row">
+					<a class="button primary" href={discussionsUrl}>Submit through GitHub Discussions</a>
+					<a class="button" href="/community/#approved-public-submissions">View Approved Submissions</a>
+					<a class="button" href={privateNoteUrl}>Email a private note</a>
+				</div>
+			</div>
 		</div>
 	</section>
 </SiteLayout>

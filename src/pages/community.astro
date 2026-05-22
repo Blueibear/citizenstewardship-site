@@ -1,62 +1,130 @@
 ---
 import PageHero from '../components/PageHero.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+
+const discussionsUrl = 'https://github.com/Blueibear/citizenstewardship-site/discussions';
+const forumSections = [
+	{
+		title: 'Proposal One Discussion',
+		description:
+			'Discuss the full democratic renewal proposal, challenge assumptions, and suggest section-specific revisions.',
+	},
+	{
+		title: 'Proposal Two Discussion',
+		description:
+			'Review the feasible reform package, identify practical barriers, and propose stronger implementation paths.',
+	},
+	{
+		title: 'Public Submissions',
+		description:
+			'Post proposed additions, corrections, missing pillars, or evidence-backed criticism for public review.',
+	},
+	{
+		title: 'Approved Submissions',
+		description:
+			'Read submissions that have been reviewed for seriousness, relevance, nonpartisanship, and basic factual grounding.',
+	},
+	{
+		title: 'Site Improvements',
+		description:
+			'Suggest improvements to page clarity, accessibility, document links, wording, navigation, or repository maintenance.',
+	},
+	{
+		title: 'General Civic Discussion',
+		description:
+			'Discuss civic reform ideas that relate to the project but do not fit one proposal or submission category.',
+	},
+];
 ---
 
 <SiteLayout
 	title="Community"
-	description="Community guidance for discussing Citizen Stewardship proposals in a serious, nonpartisan way."
+	description="Public forum hub for discussing Citizen Stewardship proposals, submissions, and site improvements."
 >
 	<PageHero
-		title="Community Review"
-		lede="Citizen Stewardship is strongest when people read carefully, argue honestly, and test reform ideas against practical limits."
-	/>
+		title="Public Forum Hub"
+		lede="Discuss the proposals, suggest changes, challenge assumptions, and read public submissions in a serious civic forum."
+	>
+		<div slot="actions" class="hero-actions">
+			<a class="button primary" href={discussionsUrl}>Open GitHub Discussions</a>
+			<a class="button" href="#approved-public-submissions">Approved submissions</a>
+		</div>
+	</PageHero>
 
 	<section class="section tight">
-		<div class="container two-grid">
-			<article class="info-panel">
-				<h2>Discussion ground rules</h2>
+		<div class="container content-grid">
+			<div class="prose">
+				<h2>How this forum should work</h2>
+				<p>
+					This discussion space is intended to be nonpartisan, evidence-aware,
+					rights-respecting, and focused on improving the proposals. Readers should be able
+					to compare ideas, pressure-test claims, propose better wording, and identify legal
+					or practical limits without being pushed into party loyalty.
+				</p>
+				<p>
+					Disagreement is welcome. Strong criticism is useful when it is specific,
+					constructive, and honest.
+				</p>
+			</div>
+			<aside class="callout">
+				<h3>Not welcome</h3>
 				<ul class="quiet-list">
-					<li>Focus on rules and institutions, not party loyalty.</li>
-					<li>Separate what is desirable from what is legally possible.</li>
-					<li>Name tradeoffs, enforcement problems, and unintended consequences.</li>
-					<li>Protect rights, minority viewpoints, and lawful dissent.</li>
-					<li>Prefer plain language over slogans.</li>
+					<li>Bad-faith partisan trolling.</li>
+					<li>Personal attacks, harassment, threats, or doxxing.</li>
+					<li>Racism, religious bigotry, or anti-LGBTQ attacks.</li>
+					<li>Conspiracy spam or evidence-free claims.</li>
+					<li>Corporate astroturfing disguised as citizen input.</li>
 				</ul>
-			</article>
-			<article class="info-panel">
-				<h2>Local use</h2>
-				<p>
-					The proposals can support reading groups, classroom discussion, civic association
-					meetings, local reform workshops, or issue-by-issue review sessions.
-				</p>
-				<p>
-					A useful meeting format is simple: pick one section, summarize its goal, list the legal
-					and political barriers, then write concrete revisions.
-				</p>
-			</article>
+			</aside>
 		</div>
 	</section>
 
 	<section class="section surface-band">
+		<div class="container">
+			<div class="section-header">
+				<h2>Forum sections</h2>
+				<p>
+					These links point to the repository Discussions area for now. They can later be
+					replaced with category-specific Discussion links after categories are created.
+				</p>
+			</div>
+			<div class="forum-grid">
+				{
+					forumSections.map((section) => (
+						<a class="forum-card" href={discussionsUrl}>
+							<span class="meta-line">GitHub Discussions</span>
+							<h3>{section.title}</h3>
+							<p>{section.description}</p>
+							<span class="text-link">Open discussion</span>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section id="approved-public-submissions" class="section">
 		<div class="container content-grid">
 			<div class="prose">
-				<h2>Questions worth asking</h2>
-				<ul>
-					<li>What problem is this reform trying to solve?</li>
-					<li>What power does it create, limit, or transfer?</li>
-					<li>Who enforces it, and how could enforcement fail?</li>
-					<li>What rights need explicit protection?</li>
-					<li>Can a smaller pilot test the idea before national adoption?</li>
-				</ul>
-			</div>
-			<aside class="callout">
-				<h3>Next step</h3>
+				<h2>Approved Public Submissions</h2>
 				<p>
-					Use the submit page to prepare specific, source-aware feedback. This site does not run
-					an online intake form.
+					Approved submissions are reform ideas or proposed additions that have been
+					reviewed for seriousness, relevance, nonpartisanship, and basic factual grounding.
+					Approval does not mean full endorsement. It means the idea is worth public
+					review.
 				</p>
-				<a class="button primary" href="/submit">Prepare feedback</a>
+				<p>
+					This area is intentionally structured so manually maintained approved submission
+					cards can replace the placeholder when submissions are ready to publish.
+				</p>
+			</div>
+			<aside class="approved-placeholder">
+				<h3>No approved submissions have been published yet.</h3>
+				<p>
+					Use the Submit page to prepare a proposal suggestion for public review through
+					GitHub Discussions.
+				</p>
+				<a class="button primary" href="/submit">Prepare a submission</a>
 			</aside>
 		</div>
 	</section>

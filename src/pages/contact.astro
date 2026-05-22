@@ -1,39 +1,88 @@
 ---
 import PageHero from '../components/PageHero.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+
+const contactEmail = 'contact@citizenstewardship.org';
+const contactMailto = 'mailto:contact@citizenstewardship.org?subject=Citizen%20Stewardship%20contact';
 ---
 
 <SiteLayout
 	title="Contact"
-	description="Contact information for Citizen Stewardship without forms, analytics, or backend collection."
+	description="Contact Citizen Stewardship by public email or through a static contact form layout that requires a configured endpoint before use."
 >
 	<PageHero
 		title="Contact"
-		lede="Citizen Stewardship keeps this site static. There is no contact form, tracking script, or backend message collection on this page."
-	/>
+		lede="Reach Citizen Stewardship by email, or connect the static contact form to a real form endpoint before relying on it."
+	>
+		<div slot="actions" class="hero-actions">
+			<a class="button primary" href={contactMailto}>Email Citizen Stewardship</a>
+			<a class="button" href="/submit">Proposal submission guidance</a>
+		</div>
+	</PageHero>
 
 	<section class="section tight">
 		<div class="container content-grid">
 			<div class="prose">
-				<h2>Current contact status</h2>
+				<h2>Public contact email</h2>
 				<p>
-					A verified public inbox or organizational contact channel has not been published in this
-					repository. Until one is added, use the public channel where this site was shared to ask
-					questions or deliver prepared feedback.
+					The public contact address is <a href={contactMailto}>{contactEmail}</a>.
 				</p>
 				<p>
-					This avoids publishing an unverified address and avoids creating a form that appears to
-					send messages when no backend exists.
+					For proposal edits, use the Submit page first so your note includes the proposal,
+					section, proposed change, reasoning, risks, and sources.
 				</p>
+				<div class="button-row">
+					<a class="button primary" href={contactMailto}>Send email</a>
+					<a class="button" href="/community">Visit community forum</a>
+				</div>
 			</div>
 			<aside class="callout">
-				<h3>Before reaching out</h3>
+				<h3>Static-site note</h3>
 				<p>
-					For proposal edits, prepare the proposal name, section, specific issue, suggested
-					revision, and any sources first.
+					This form requires a form endpoint before it can receive messages. Until then, use
+					contact@citizenstewardship.org.
 				</p>
-				<a class="button primary" href="/submit">View submission checklist</a>
 			</aside>
+		</div>
+	</section>
+
+	<section class="section surface-band">
+		<div class="container">
+			<div class="contact-panel">
+				<div class="section-header compact">
+					<h2>Contact form</h2>
+					<p>
+						This form requires a form endpoint before it can receive messages. Until then,
+						use <a href={contactMailto}>contact@citizenstewardship.org</a>.
+					</p>
+				</div>
+
+				<!-- Replace this Formspree placeholder URL with the real form endpoint before relying on this form. -->
+				<form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+					<div class="form-grid">
+						<div class="form-field">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" autocomplete="name" required />
+						</div>
+						<div class="form-field">
+							<label for="email">Email</label>
+							<input id="email" name="email" type="email" autocomplete="email" required />
+						</div>
+					</div>
+					<div class="form-field">
+						<label for="subject">Subject</label>
+						<input id="subject" name="subject" type="text" required />
+					</div>
+					<div class="form-field">
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="8" required></textarea>
+					</div>
+					<div class="form-actions">
+						<button class="button primary" type="submit">Send message</button>
+						<a class="button" href={contactMailto}>Use email instead</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</section>
 </SiteLayout>

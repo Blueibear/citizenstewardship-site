@@ -231,6 +231,8 @@ li + li {
 	border-radius: 4px;
 	background: var(--surface);
 	color: var(--ink);
+	cursor: pointer;
+	font-family: inherit;
 	font-size: 0.94rem;
 	font-weight: 700;
 	line-height: 1;
@@ -522,6 +524,210 @@ li + li {
 	color: var(--muted);
 }
 
+.forum-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.forum-card {
+	display: flex;
+	min-height: 250px;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--surface);
+	box-shadow: 0 8px 24px rgba(23, 33, 43, 0.055);
+	color: var(--ink);
+	padding: clamp(1.2rem, 3vw, 1.6rem);
+	text-decoration: none;
+	transition:
+		border-color 150ms ease,
+		box-shadow 150ms ease,
+		transform 150ms ease;
+}
+
+.forum-card h3 {
+	margin-top: 0.7rem;
+}
+
+.forum-card p {
+	color: var(--muted);
+}
+
+.forum-card:hover {
+	border-color: rgba(36, 103, 84, 0.45);
+	box-shadow: var(--shadow);
+	color: var(--ink);
+	transform: translateY(-2px);
+}
+
+.approved-placeholder,
+.submit-actions-panel,
+.contact-panel {
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--surface);
+	box-shadow: var(--shadow);
+	padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.approved-placeholder {
+	border-left: 5px solid var(--green);
+}
+
+.approved-placeholder h3 {
+	margin-bottom: 0.75rem;
+}
+
+.approved-placeholder p,
+.submit-actions-panel p {
+	color: var(--muted);
+}
+
+.check-list,
+.warning-list,
+.tag-list {
+	list-style: none;
+	padding: 0;
+}
+
+.check-list,
+.warning-list {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.check-list li,
+.warning-list li {
+	position: relative;
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.72);
+	color: var(--muted);
+	margin: 0;
+	padding: 0.85rem 1rem 0.85rem 2.6rem;
+}
+
+.check-list li::before,
+.warning-list li::before {
+	position: absolute;
+	left: 1rem;
+	top: 0.92rem;
+	width: 0.85rem;
+	height: 0.85rem;
+	border-radius: 999px;
+	content: "";
+}
+
+.check-list li::before {
+	background: var(--green);
+}
+
+.warning-list li::before {
+	background: var(--red);
+}
+
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.55rem;
+	margin-top: 1rem;
+}
+
+.tag-list li {
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: rgba(246, 248, 247, 0.85);
+	color: var(--ink);
+	font-size: 0.9rem;
+	font-weight: 700;
+	margin: 0;
+	padding: 0.38rem 0.55rem;
+}
+
+.format-list {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.7rem 1rem;
+	padding-left: 1.45rem;
+}
+
+.format-list li {
+	border-bottom: 1px solid var(--line);
+	color: var(--muted);
+	padding-bottom: 0.55rem;
+}
+
+.submit-actions-panel {
+	display: grid;
+	grid-template-columns: minmax(0, 0.75fr) minmax(320px, 0.75fr);
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.submit-actions-panel h2 {
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.section-header.compact {
+	margin-bottom: 1.4rem;
+}
+
+.contact-form {
+	display: grid;
+	gap: 1rem;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.form-field {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.form-field label {
+	color: var(--ink);
+	font-size: 0.95rem;
+	font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+	width: 100%;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	background: #ffffff;
+	color: var(--ink);
+	font: inherit;
+	line-height: 1.4;
+	padding: 0.78rem 0.85rem;
+}
+
+.form-field textarea {
+	resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+	border-color: var(--green);
+	box-shadow: 0 0 0 3px rgba(36, 103, 84, 0.14);
+	outline: none;
+}
+
+.form-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+	align-items: center;
+	margin-top: 0.35rem;
+}
+
 .site-footer {
 	border-top: 1px solid var(--line);
 	background: #17212b;
@@ -592,7 +798,11 @@ li + li {
 
 	.proposal-grid,
 	.three-grid,
-	.two-grid {
+	.two-grid,
+	.forum-grid,
+	.form-grid,
+	.format-list,
+	.submit-actions-panel {
 		grid-template-columns: 1fr;
 	}
 
