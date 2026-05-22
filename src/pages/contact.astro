@@ -8,11 +8,11 @@ const contactMailto = 'mailto:contact@citizenstewardship.org?subject=Citizen%20S
 
 <SiteLayout
 	title="Contact"
-	description="Contact Citizen Stewardship by public email or through a static contact form layout that requires a configured endpoint before use."
+	description="Contact Citizen Stewardship by public email or through the contact form."
 >
 	<PageHero
 		title="Contact"
-		lede="Reach Citizen Stewardship by email, or connect the static contact form to a real form endpoint before relying on it."
+		lede="Reach Citizen Stewardship by email or through the contact form."
 	>
 		<div slot="actions" class="hero-actions">
 			<a class="button primary" href={contactMailto}>Email Citizen Stewardship</a>
@@ -37,10 +37,9 @@ const contactMailto = 'mailto:contact@citizenstewardship.org?subject=Citizen%20S
 				</div>
 			</div>
 			<aside class="callout">
-				<h3>Static-site note</h3>
 				<p>
-					This form requires a form endpoint before it can receive messages. Until then, use
-					contact@citizenstewardship.org.
+					Use the form below to send a message, correction, or private note. You can also
+					email <a href={contactMailto}>{contactEmail}</a> directly.
 				</p>
 			</aside>
 		</div>
@@ -52,13 +51,13 @@ const contactMailto = 'mailto:contact@citizenstewardship.org?subject=Citizen%20S
 				<div class="section-header compact">
 					<h2>Contact form</h2>
 					<p>
-						This form requires a form endpoint before it can receive messages. Until then,
-						use <a href={contactMailto}>contact@citizenstewardship.org</a>.
+						Use the form below to send a message, correction, or private note. You can also
+						email <a href={contactMailto}>{contactEmail}</a> directly.
 					</p>
 				</div>
 
-				<!-- Replace this Formspree placeholder URL with the real form endpoint before relying on this form. -->
-				<form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+				<!-- Editors: test the Formspree endpoint before relying on this form. -->
+				<form class="contact-form" action="https://formspree.io/f/mvzyrpgl" method="POST">
 					<div class="form-grid">
 						<div class="form-field">
 							<label for="name">Name</label>
