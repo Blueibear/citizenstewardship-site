@@ -2,11 +2,15 @@
 import PageHero from '../components/PageHero.astro';
 import PillarGrid from '../components/PillarGrid.astro';
 import ProposalCard from '../components/ProposalCard.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import { SITE_DESCRIPTION } from '../consts';
 
 const proposalOnePdf = '/assets/pdfs/democratic-renewal-full-proposal.pdf';
 const proposalTwoPdf = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
+const shareText =
+	'Citizen Stewardship: citizen-created proposals for American democratic renewal, public accountability, and citizens over corporations.';
 ---
 
 <SiteLayout description={SITE_DESCRIPTION}>
@@ -28,6 +32,16 @@ const proposalTwoPdf = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
 			/>
 		</div>
 	</PageHero>
+
+	<section class="share-strip">
+		<div class="container">
+			<ShareButtons
+				label="Share Citizen Stewardship"
+				shareUrl="https://citizenstewardship.org/"
+				shareText={shareText}
+			/>
+		</div>
+	</section>
 
 	<section class="section surface-band">
 		<div class="container">
@@ -112,6 +126,11 @@ const proposalTwoPdf = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
 					<li>Open the full PDFs for details and source notes.</li>
 					<li>Use the community and submit pages to prepare serious feedback.</li>
 				</ol>
+				<div class="social-inline">
+					<h3>Stay connected</h3>
+					<p>Follow official updates without adding tracking scripts to this site.</p>
+					<SocialLinks />
+				</div>
 			</div>
 		</div>
 	</section>

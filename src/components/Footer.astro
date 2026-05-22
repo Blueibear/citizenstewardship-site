@@ -1,4 +1,6 @@
 ---
+import SocialLinks from './SocialLinks.astro';
+
 const today = new Date();
 ---
 
@@ -20,6 +22,10 @@ const today = new Date();
 			<a href="/contact">Contact</a>
 			<a href="/privacy">Privacy</a>
 		</nav>
+		<div class="footer-connect">
+			<h2>Connect</h2>
+			<SocialLinks variant="footer" ariaLabel="Footer social links" />
+		</div>
 		<div class="footer-note">
 			<p>Read, question, improve, and discuss.</p>
 			<p>&copy; {today.getFullYear()} Citizen Stewardship.</p>

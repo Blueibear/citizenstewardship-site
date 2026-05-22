@@ -1,7 +1,12 @@
 ---
 import PageHero from '../components/PageHero.astro';
 import PillarGrid from '../components/PillarGrid.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
+
+const shareText =
+	'Citizen Stewardship: citizen-created proposals for American democratic renewal, public accountability, and citizens over corporations.';
 ---
 
 <SiteLayout
@@ -12,6 +17,16 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 		title="About Citizen Stewardship"
 		lede="Citizen Stewardship exists to publish serious democratic reform proposals for the United States in plain language so citizens can inspect, discuss, challenge, and improve them."
 	/>
+
+	<section class="share-strip">
+		<div class="container">
+			<ShareButtons
+				label="Share this page"
+				shareUrl="https://citizenstewardship.org/about/"
+				shareText={shareText}
+			/>
+		</div>
+	</section>
 
 	<section class="section tight">
 		<div class="container content-grid">
@@ -48,6 +63,11 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 					Good civic reform should be public, readable, accountable, legally honest, and open to
 					hard criticism.
 				</p>
+				<div class="social-inline">
+					<h3>Follow the project</h3>
+					<p>Stay connected through official Citizen Stewardship channels.</p>
+					<SocialLinks />
+				</div>
 			</aside>
 		</div>
 	</section>

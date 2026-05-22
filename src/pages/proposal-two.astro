@@ -1,9 +1,12 @@
 ---
 import DocumentPreview from '../components/DocumentPreview.astro';
 import PageHero from '../components/PageHero.astro';
+import ShareButtons from '../components/ShareButtons.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
 const pdfHref = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
+const shareText =
+	'Read Proposal Two from Citizen Stewardship: feasible democratic reforms that can be pursued without a full constitutional rewrite.';
 ---
 
 <SiteLayout
@@ -19,6 +22,16 @@ const pdfHref = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
 			<a class="button" href="/proposal-one">Compare Proposal One</a>
 		</div>
 	</PageHero>
+
+	<section class="share-strip">
+		<div class="container">
+			<ShareButtons
+				label="Share Proposal Two"
+				shareUrl="https://citizenstewardship.org/proposal-two/"
+				shareText={shareText}
+			/>
+		</div>
+	</section>
 
 	<section class="section tight">
 		<div class="container content-grid">

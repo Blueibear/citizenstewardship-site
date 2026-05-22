@@ -1,5 +1,7 @@
 ---
 import PageHero from '../components/PageHero.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
 const discussionCategories = {
@@ -55,6 +57,9 @@ const forumSections = [
 		href: discussionCategories.generalCivic,
 	},
 ];
+
+const shareText =
+	'Citizen Stewardship: citizen-created proposals for American democratic renewal, public accountability, and citizens over corporations.';
 ---
 
 <SiteLayout
@@ -85,6 +90,16 @@ const forumSections = [
 		</div>
 	</PageHero>
 
+	<section class="share-strip">
+		<div class="container">
+			<ShareButtons
+				label="Share this page"
+				shareUrl="https://citizenstewardship.org/community/"
+				shareText={shareText}
+			/>
+		</div>
+	</section>
+
 	<section class="section tight">
 		<div class="container content-grid">
 			<div class="prose">
@@ -99,6 +114,14 @@ const forumSections = [
 					Disagreement is welcome. Strong criticism is useful when it is specific,
 					constructive, and honest.
 				</p>
+				<div class="social-inline">
+					<h2>Broader updates</h2>
+					<p>
+						Public discussion happens through GitHub Discussions. Broader updates may also
+						appear on Substack and the official social channels.
+					</p>
+					<SocialLinks />
+				</div>
 			</div>
 			<aside class="callout">
 				<h3>Not welcome</h3>
@@ -119,7 +142,8 @@ const forumSections = [
 				<h2>Forum sections</h2>
 				<p>
 					These links point directly to the public GitHub Discussions categories for each
-					proposal, submission path, and site improvement topic.
+					proposal, submission path, and site improvement topic. GitHub Discussions remains
+					the public review forum for proposal work.
 				</p>
 			</div>
 			<div class="forum-grid">

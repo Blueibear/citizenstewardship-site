@@ -1,5 +1,6 @@
 ---
 import PageHero from '../components/PageHero.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
 const contactEmail = 'contact@citizenstewardship.org';
@@ -37,10 +38,12 @@ const contactMailto = 'mailto:contact@citizenstewardship.org?subject=Citizen%20S
 				</div>
 			</div>
 			<aside class="callout">
+				<h3>Connect online</h3>
 				<p>
-					Use the form below to send a message, correction, or private note. You can also
-					email <a href={contactMailto}>{contactEmail}</a> directly.
+					Follow official Citizen Stewardship updates and public channels. For direct contact,
+					use <a href={contactMailto}>{contactEmail}</a> or the form below.
 				</p>
+				<SocialLinks />
 			</aside>
 		</div>
 	</section>

@@ -1,0 +1,39 @@
+---
+interface Props {
+	variant?: 'default' | 'footer';
+	ariaLabel?: string;
+}
+
+const { variant = 'default', ariaLabel = 'Official Citizen Stewardship social links' } = Astro.props;
+
+const socialLinks = [
+	{
+		label: 'Substack',
+		href: 'https://citizenstewardship.substack.com/',
+	},
+	{
+		label: 'Facebook',
+		href: 'https://facebook.com/CitizenStewardship',
+	},
+	{
+		label: 'Bluesky',
+		href: 'https://bsky.app/profile/citizenstewardship.org',
+	},
+	{
+		label: 'X',
+		href: 'https://x.com/CitizenStewards',
+	},
+];
+---
+
+<ul class:list={['social-link-list', { 'footer-social-link-list': variant === 'footer' }]} aria-label={ariaLabel}>
+	{
+		socialLinks.map((link) => (
+			<li>
+				<a href={link.href} target="_blank" rel="noopener noreferrer">
+					{link.label}
+				</a>
+			</li>
+		))
+	}
+</ul>

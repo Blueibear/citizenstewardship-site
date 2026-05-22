@@ -12,6 +12,13 @@ The repo remains an Astro static site deployed through Cloudflare Pages at `http
 
 Public discussion runs through GitHub Discussions. The public contact email is `contact@citizenstewardship.org`, and the contact page uses the Formspree endpoint currently configured in `src/pages/contact.astro`.
 
+Official social links:
+
+- Substack: <https://citizenstewardship.substack.com/>
+- Facebook: <https://facebook.com/CitizenStewardship>
+- Bluesky: <https://bsky.app/profile/citizenstewardship.org>
+- X: <https://x.com/CitizenStewards>
+
 ## Pages
 
 The current site routes are:
@@ -58,6 +65,11 @@ Site links to these GitHub Discussions categories should use `target="_blank"` a
 - Approval does not mean final adoption or full endorsement.
 - Approved submissions can later be manually listed in the Approved Public Submissions area on the Community page.
 - Public discussion should remain constructive, nonpartisan, and grounded in improving the proposals.
+- The Submit page uses the full Citizen Stewardship Core Pillars list, not a shortened Core Principles list.
+
+## Sharing
+
+Share buttons are implemented locally in `src/components/ShareButtons.astro`. They use the native Web Share API when available, provide a local copy-link fallback, and include direct Facebook, X, and Bluesky share/compose links. No third-party share widgets, analytics, or tracking scripts are used.
 
 ## Site Images and Metadata
 

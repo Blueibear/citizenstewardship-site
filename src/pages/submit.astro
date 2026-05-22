@@ -1,5 +1,7 @@
 ---
 import PageHero from '../components/PageHero.astro';
+import PillarGrid from '../components/PillarGrid.astro';
+import ShareButtons from '../components/ShareButtons.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
 const publicSubmissionsUrl =
@@ -12,21 +14,8 @@ const generalCivicDiscussionUrl =
 	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion';
 const privateNoteUrl =
 	'mailto:contact@citizenstewardship.org?subject=Citizen%20Stewardship%20proposal%20suggestion';
-
-const corePrinciples = [
-	'Nonpartisanship',
-	'Equality for all citizens',
-	'Citizens over corporations',
-	'Money out of politics',
-	'Strengthening public education',
-	'Revising the tax code',
-	'Anti-corruption',
-	'Voting rights',
-	'Transparency',
-	'Secular government',
-	'Practical feasibility',
-	'Factual grounding',
-];
+const shareText =
+	'Citizen Stewardship: citizen-created proposals for American democratic renewal, public accountability, and citizens over corporations.';
 
 const alignmentChecklist = [
 	'Does it strengthen ordinary citizens over corporations or insiders?',
@@ -108,6 +97,16 @@ const requiredFormat = [
 		</div>
 	</PageHero>
 
+	<section class="share-strip">
+		<div class="container">
+			<ShareButtons
+				label="Share this page"
+				shareUrl="https://citizenstewardship.org/submit/"
+				shareText={shareText}
+			/>
+		</div>
+	</section>
+
 	<section class="section tight">
 		<div class="container content-grid">
 			<div class="prose">
@@ -118,12 +117,15 @@ const requiredFormat = [
 					legal system.
 				</p>
 
-				<h2>What submissions should align with</h2>
+				<h2>Core Pillars</h2>
 				<p>
 					Submissions do not have to agree with every existing proposal, but they should
-					generally support or seriously engage with one or more of the project's core
-					pillars.
+					seriously engage with one or more of the project's Core Pillars rather than
+					repeating a shorter principles list.
 				</p>
+				<PillarGrid compact />
+
+				<h2>Submission alignment questions</h2>
 				<ul class="check-list">
 					{alignmentChecklist.map((item) => <li>{item}</li>)}
 				</ul>
@@ -139,11 +141,11 @@ const requiredFormat = [
 				</ul>
 			</div>
 			<aside class="callout">
-				<h3>Core principles</h3>
-				<p>Submissions should reinforce the project's operating principles.</p>
-				<ul class="tag-list" aria-label="Citizen Stewardship core principles">
-					{corePrinciples.map((principle) => <li>{principle}</li>)}
-				</ul>
+				<h3>Before you submit</h3>
+				<p>
+					Strong submissions identify the affected proposal section, explain the problem, and
+					connect the recommended change to at least one Core Pillar.
+				</p>
 			</aside>
 		</div>
 	</section>

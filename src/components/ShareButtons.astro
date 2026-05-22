@@ -1,0 +1,151 @@
+---
+interface Props {
+	label: string;
+	shareText: string;
+	shareUrl: string;
+}
+
+const { label, shareText, shareUrl } = Astro.props;
+const encodedUrl = encodeURIComponent(shareUrl);
+const encodedText = encodeURIComponent(shareText);
+const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+const xHref = `https://x.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+const blueskyHref = `https://bsky.app/intent/compose?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`;
+---
+
+<section class="share-panel" aria-label={label}>
+	<div class="share-panel-copy">
+		<p class="share-panel-label">{label}</p>
+	</div>
+	<div class="share-actions" aria-label={`${label} links`}>
+		<button
+			class="button"
+			type="button"
+			data-share-native
+			data-share-title={label}
+			data-share-text={shareText}
+			data-share-url={shareUrl}
+			aria-label={`${label} using your device share menu`}
+		>
+			Share
+		</button>
+		<button
+			class="button"
+			type="button"
+			data-copy-link
+			data-share-url={shareUrl}
+			aria-label={`Copy link for ${label}`}
+		>
+			Copy link
+		</button>
+		<a
+			class="button"
+			href={facebookHref}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label={`${label} on Facebook`}
+		>
+			Facebook
+		</a>
+		<a
+			class="button"
+			href={xHref}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label={`${label} on X`}
+		>
+			X
+		</a>
+		<a
+			class="button"
+			href={blueskyHref}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label={`${label} on Bluesky`}
+		>
+			Bluesky
+		</a>
+	</div>
+	<p class="sr-only" data-share-status aria-live="polite"></p>
+</section>
+
+<script>
+	const copyWithFallback = async (text) => {
+		let clipboardError;
+
+		if (navigator.clipboard && window.isSecureContext) {
+			try {
+				await navigator.clipboard.writeText(text);
+				return;
+			} catch (error) {
+				clipboardError = error;
+			}
+		}
+
+		const textArea = document.createElement('textarea');
+		textArea.value = text;
+		textArea.setAttribute('readonly', '');
+		textArea.style.position = 'fixed';
+		textArea.style.opacity = '0';
+		document.body.appendChild(textArea);
+		textArea.select();
+		const copied = document.execCommand('copy');
+		document.body.removeChild(textArea);
+
+		if (!copied) {
+			throw clipboardError || new Error('Copy command failed.');
+		}
+	};
+
+	const updateShareStatus = (button, message) => {
+		const panel = button.closest('.share-panel');
+		const status = panel?.querySelector('[data-share-status]');
+		if (status) {
+			status.textContent = message;
+		}
+	};
+
+	document.querySelectorAll('[data-share-native]').forEach((button) => {
+		if (!('share' in navigator)) {
+			button.hidden = true;
+			return;
+		}
+
+		button.addEventListener('click', async () => {
+			try {
+				await navigator.share({
+					title: button.dataset.shareTitle,
+					text: button.dataset.shareText,
+					url: button.dataset.shareUrl,
+				});
+				updateShareStatus(button, 'Share menu opened.');
+			} catch (error) {
+				if (error?.name !== 'AbortError') {
+					updateShareStatus(button, 'Sharing is unavailable. Use copy link instead.');
+				}
+			}
+		});
+	});
+
+	document.querySelectorAll('[data-copy-link]').forEach((button) => {
+		button.addEventListener('click', async () => {
+			const shareUrl = button.dataset.shareUrl || window.location.href;
+			const originalText = button.textContent || 'Copy link';
+
+			try {
+				await copyWithFallback(shareUrl);
+				button.textContent = 'Copied';
+				updateShareStatus(button, 'Link copied.');
+				window.setTimeout(() => {
+					button.textContent = originalText;
+				}, 1800);
+			} catch {
+				button.textContent = 'Copy failed';
+				updateShareStatus(button, 'Copy failed. Select and copy the page URL.');
+				window.setTimeout(() => {
+					button.textContent = originalText;
+				}, 2200);
+			}
+		});
+	});
+</script>
