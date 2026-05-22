@@ -1,0 +1,78 @@
+---
+import DocumentPreview from '../components/DocumentPreview.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const pdfHref = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
+---
+
+<SiteLayout
+	title="Proposal Two"
+	description="Proposal Two: Feasible Democratic Reform Proposal, a practical reform package for strengthening U.S. democracy."
+>
+	<PageHero
+		title="Feasible Democratic Reform Proposal"
+		lede="A practical reform package for strengthening U.S. democracy without a complete constitutional rewrite."
+	>
+		<div slot="actions" class="hero-actions">
+			<a class="button primary" href={pdfHref}>Open full PDF</a>
+			<a class="button" href="/proposal-one">Compare Proposal One</a>
+		</div>
+	</PageHero>
+
+	<section class="section tight">
+		<div class="container content-grid">
+			<article class="prose">
+				<p class="lead-block">
+					Core idea: keep the current constitutional structure, but surround it with stronger
+					voting rights, citizen review, clean-money incentives, anti-corruption rules, media
+					accountability, civic education, public education investment, and limits on executive
+					abuse.
+				</p>
+				<h2>Scope</h2>
+				<p>
+					This proposal focuses on reforms that could plausibly be pursued without fully replacing
+					the U.S. Constitution. The draft distinguishes federal statutes, state laws,
+					congressional rules, agency enforcement, interstate compacts, and targeted amendments.
+				</p>
+				<p>
+					It is more feasible than a full constitutional rewrite, but it still assumes sustained
+					organization, litigation readiness, public pressure, and electoral work.
+				</p>
+
+				<h2>Citizen action path</h2>
+				<div class="fact-list">
+					<article>
+						<h3>Build local proof</h3>
+						<p>
+							Start with city, county, and state pilots for citizen review assemblies, public
+							campaign financing, ranked-choice voting, independent redistricting, public ethics
+							rules, and civic education.
+						</p>
+					</article>
+					<article>
+						<h3>Form broad coalitions</h3>
+						<p>
+							Unite people around fair rules, transparent lawmaking, anti-corruption, public
+							education, anti-monopoly policy, and ordinary citizen involvement.
+						</p>
+					</article>
+					<article>
+						<h3>Prepare for the hard parts</h3>
+						<p>
+							Serious reforms would need model laws, state campaigns, federal reform candidates,
+							public scorecards, legal defense funds, and civic education infrastructure.
+						</p>
+					</article>
+				</div>
+
+				<h2>Practical standard</h2>
+				<p>
+					The proposal does not pretend the hard parts are easy. Its premise is that reform must be
+					organized, legally careful, publicly explained, and defended over time.
+				</p>
+			</article>
+			<DocumentPreview title="Feasible Democratic Reform Proposal" pdfHref={pdfHref} />
+		</div>
+	</section>
+</SiteLayout>

@@ -1,0 +1,51 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout
+	title="Submit"
+	description="Submission guidance for Citizen Stewardship without adding backend forms or data collection."
+>
+	<PageHero
+		title="Prepare a Submission"
+		lede="This static site does not collect submissions online. Use this page as a checklist for serious feedback, revisions, or local discussion notes."
+	/>
+
+	<section class="section tight">
+		<div class="container content-grid">
+			<div class="prose">
+				<p class="privacy-note">
+					No form is provided here because the site has no backend and does not collect personal
+					information.
+				</p>
+				<h2>What strong feedback includes</h2>
+				<ul>
+					<li>The proposal name and section you are addressing.</li>
+					<li>The exact sentence, claim, or reform mechanism you want reviewed.</li>
+					<li>A suggested revision in plain language.</li>
+					<li>Legal, historical, budget, administrative, or civic evidence where available.</li>
+					<li>A clear distinction between objection, improvement, and open question.</li>
+				</ul>
+
+				<h2>What to avoid</h2>
+				<ul>
+					<li>Private personal information.</li>
+					<li>Unsourced factual claims presented as settled proof.</li>
+					<li>Party talking points that do not address the reform mechanism.</li>
+					<li>Threats, harassment, or attempts to expose private people.</li>
+				</ul>
+			</div>
+			<aside class="callout">
+				<h3>Suggested format</h3>
+				<ol>
+					<li>Proposal and section.</li>
+					<li>Issue or opportunity.</li>
+					<li>Why it matters.</li>
+					<li>Suggested revision.</li>
+					<li>Sources or examples.</li>
+				</ol>
+			</aside>
+		</div>
+	</section>
+</SiteLayout>

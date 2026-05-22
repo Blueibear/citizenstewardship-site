@@ -1,0 +1,22 @@
+---
+interface Props {
+	title: string;
+	pdfHref: string;
+}
+
+const { title, pdfHref } = Astro.props;
+const previewHref = `${pdfHref}#page=1&view=FitH`;
+---
+
+<aside class="document-preview" aria-label={`${title} PDF preview`}>
+	<div class="preview-toolbar">
+		<span>PDF preview</span>
+		<a href={pdfHref}>Open full document</a>
+	</div>
+	<object data={previewHref} type="application/pdf" title={`${title} PDF preview`}>
+		<div class="preview-fallback">
+			<p>This browser did not load the inline PDF preview.</p>
+			<a class="button primary" href={pdfHref}>Open the PDF</a>
+		</div>
+	</object>
+</aside>

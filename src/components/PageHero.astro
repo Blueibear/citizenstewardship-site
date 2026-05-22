@@ -1,0 +1,20 @@
+---
+interface Props {
+	title: string;
+	lede: string;
+	variant?: 'home' | 'standard';
+}
+
+const { title, lede, variant = 'standard' } = Astro.props;
+---
+
+<section class:list={['page-hero', { 'home-hero': variant === 'home' }]}>
+	<div class="container hero-grid">
+		<div class="hero-copy">
+			<h1>{title}</h1>
+			<p>{lede}</p>
+			<slot name="actions" />
+		</div>
+		<slot name="visual" />
+	</div>
+</section>

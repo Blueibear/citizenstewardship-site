@@ -1,0 +1,63 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout
+	title="Community"
+	description="Community guidance for discussing Citizen Stewardship proposals in a serious, nonpartisan way."
+>
+	<PageHero
+		title="Community Review"
+		lede="Citizen Stewardship is strongest when people read carefully, argue honestly, and test reform ideas against practical limits."
+	/>
+
+	<section class="section tight">
+		<div class="container two-grid">
+			<article class="info-panel">
+				<h2>Discussion ground rules</h2>
+				<ul class="quiet-list">
+					<li>Focus on rules and institutions, not party loyalty.</li>
+					<li>Separate what is desirable from what is legally possible.</li>
+					<li>Name tradeoffs, enforcement problems, and unintended consequences.</li>
+					<li>Protect rights, minority viewpoints, and lawful dissent.</li>
+					<li>Prefer plain language over slogans.</li>
+				</ul>
+			</article>
+			<article class="info-panel">
+				<h2>Local use</h2>
+				<p>
+					The proposals can support reading groups, classroom discussion, civic association
+					meetings, local reform workshops, or issue-by-issue review sessions.
+				</p>
+				<p>
+					A useful meeting format is simple: pick one section, summarize its goal, list the legal
+					and political barriers, then write concrete revisions.
+				</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="section surface-band">
+		<div class="container content-grid">
+			<div class="prose">
+				<h2>Questions worth asking</h2>
+				<ul>
+					<li>What problem is this reform trying to solve?</li>
+					<li>What power does it create, limit, or transfer?</li>
+					<li>Who enforces it, and how could enforcement fail?</li>
+					<li>What rights need explicit protection?</li>
+					<li>Can a smaller pilot test the idea before national adoption?</li>
+				</ul>
+			</div>
+			<aside class="callout">
+				<h3>Next step</h3>
+				<p>
+					Use the submit page to prepare specific, source-aware feedback. This site does not run
+					an online intake form.
+				</p>
+				<a class="button primary" href="/submit">Prepare feedback</a>
+			</aside>
+		</div>
+	</section>
+</SiteLayout>

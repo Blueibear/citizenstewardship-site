@@ -1,50 +1,125 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import PageHero from '../components/PageHero.astro';
+import ProposalCard from '../components/ProposalCard.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { SITE_DESCRIPTION } from '../consts';
+
+const proposalOnePdf = '/assets/pdfs/democratic-renewal-full-proposal.pdf';
+const proposalTwoPdf = '/assets/pdfs/feasible-democratic-reform-proposal.pdf';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteLayout description={SITE_DESCRIPTION}>
+	<PageHero
+		variant="home"
+		title="Citizen Stewardship"
+		lede="A nonpartisan, citizen-created public proposal site for democratic renewal, practical reform, and civic responsibility."
+	>
+		<div slot="actions" class="hero-actions">
+			<a class="button primary" href="/proposal-one">Read Proposal One</a>
+			<a class="button" href="/proposal-two">Read Proposal Two</a>
+		</div>
+		<div slot="visual" class="document-table" aria-label="Public proposal documents">
+			<div class="document-sheet">
+				<div>
+					<div class="meta-line">Full structural reform draft</div>
+					<a class="sheet-title" href="/proposal-one">Democratic Renewal and Citizen Stewardship Proposal</a>
+				</div>
+				<div class="sheet-lines" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="document-sheet">
+				<div>
+					<div class="meta-line">Feasible reform draft</div>
+					<a class="sheet-title" href="/proposal-two">Feasible Democratic Reform Proposal</a>
+				</div>
+				<div class="sheet-lines" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</PageHero>
+
+	<section class="section surface-band">
+		<div class="container">
+			<div class="section-header">
+				<h2>Two public drafts, one civic purpose.</h2>
+				<p>
+					The site separates the ambitious long-range constitutional model from the more
+					practical reform package so readers can judge each path on its own terms.
+				</p>
+			</div>
+			<div class="proposal-grid">
+				<ProposalCard
+					label="Proposal One"
+					title="Democratic Renewal and Citizen Stewardship Proposal"
+					summary="A full structural reform model that assumes deep constitutional change is possible, including a rotating citizen body, public-only election financing, stronger accountability, secular government, civic education, and institutional safeguards."
+					href="/proposal-one"
+					pdfHref={proposalOnePdf}
+				/>
+				<ProposalCard
+					label="Proposal Two"
+					title="Feasible Democratic Reform Proposal"
+					summary="A practical package for strengthening U.S. democracy without a complete constitutional rewrite, using federal law, state law, chamber rules, agency enforcement, interstate compacts, and targeted amendments where needed."
+					href="/proposal-two"
+					pdfHref={proposalTwoPdf}
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container three-grid">
+			<article class="info-panel">
+				<h3>Nonpartisan by design</h3>
+				<p>
+					The proposals focus on fair rules, clean government, voting access, anti-corruption,
+					civic education, and public accountability rather than party advantage.
+				</p>
+			</article>
+			<article class="info-panel">
+				<h3>Citizen-created</h3>
+				<p>
+					The material is written for public discussion and refinement. It is not official legal
+					advice, a party platform, or a claim that hard reforms are easy.
+				</p>
+			</article>
+			<article class="info-panel">
+				<h3>Static and transparent</h3>
+				<p>
+					This build publishes pages and PDFs only. It does not add a backend, analytics,
+					secrets, or online submission forms.
+				</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="section surface-band">
+		<div class="container content-grid">
+			<div class="prose">
+				<h2>How to use this site</h2>
+				<p>
+					Start with the proposal that matches the question you want to answer. Proposal One asks
+					what a deeper democratic renewal could look like if constitutional reform were on the
+					table. Proposal Two asks what can be pursued inside the current structure.
+				</p>
+				<p>
+					Readers are encouraged to compare the assumptions, legal limits, citizen action paths,
+					and implementation risks in both documents.
+				</p>
+			</div>
+			<div class="callout">
+				<h3>Public discussion path</h3>
+				<ol>
+					<li>Read one or both proposal summaries.</li>
+					<li>Open the full PDFs for details and source notes.</li>
+					<li>Use the community and submit pages to prepare serious feedback.</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+</SiteLayout>

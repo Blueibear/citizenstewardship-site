@@ -1,0 +1,45 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout
+	title="Privacy"
+	description="Privacy statement for the static Citizen Stewardship website."
+>
+	<PageHero
+		title="Privacy"
+		lede="Citizen Stewardship is a static public website. It is designed to publish pages and PDF links without collecting submissions or adding analytics."
+	/>
+
+	<section class="section tight">
+		<div class="container prose">
+			<p class="privacy-note">Last updated: May 22, 2026.</p>
+
+			<h2>What this site collects</h2>
+			<p>
+				This site does not include account creation, comments, contact forms, submission forms,
+				payment forms, analytics scripts, advertising pixels, or newsletter signup forms.
+			</p>
+
+			<h2>PDF access</h2>
+			<p>
+				The proposal PDFs are served as static public files from the site. Opening or downloading a
+				PDF does not submit information through this website.
+			</p>
+
+			<h2>Hosting logs</h2>
+			<p>
+				Like most websites, the hosting provider may process standard request logs needed to serve
+				pages, protect infrastructure, and diagnose errors. This site does not add its own analytics
+				layer on top of that.
+			</p>
+
+			<h2>External links</h2>
+			<p>
+				If future versions link to external services, those services may have their own privacy
+				practices. Review those policies before sending information elsewhere.
+			</p>
+		</div>
+	</section>
+</SiteLayout>

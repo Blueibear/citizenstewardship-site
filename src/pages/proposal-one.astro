@@ -1,0 +1,81 @@
+---
+import DocumentPreview from '../components/DocumentPreview.astro';
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const pdfHref = '/assets/pdfs/democratic-renewal-full-proposal.pdf';
+---
+
+<SiteLayout
+	title="Proposal One"
+	description="Proposal One: Democratic Renewal and Citizen Stewardship Proposal, a full structural reform draft."
+>
+	<PageHero
+		title="Democratic Renewal and Citizen Stewardship Proposal"
+		lede="A full structural reform proposal based on citizen representation, clean elections, public accountability, secular government, civic education, and institutional safeguards."
+	>
+		<div slot="actions" class="hero-actions">
+			<a class="button primary" href={pdfHref}>Open full PDF</a>
+			<a class="button" href="/proposal-two">Compare Proposal Two</a>
+		</div>
+	</PageHero>
+
+	<section class="section tight">
+		<div class="container content-grid">
+			<article class="prose">
+				<p class="lead-block">
+					Core thesis: democracy should be run by citizens, protected from money, grounded in
+					truth, limited by rights, and supported by education.
+				</p>
+				<h2>Scope</h2>
+				<p>
+					This proposal assumes a rare scenario where major constitutional reform is possible. It
+					keeps Congress and the Senate, but adds a powerful rotating citizen body whose powers
+					phase in over time.
+				</p>
+				<p>
+					The draft is intentionally ambitious. It treats the legal and political threshold as a
+					central problem, not as a footnote.
+				</p>
+
+				<h2>Main reform areas</h2>
+				<div class="fact-list">
+					<article>
+						<h3>Citizen representation</h3>
+						<p>
+							Adds a National Citizen Assembly selected by civic lottery, with expert support,
+							transparency, job protection, and phased authority.
+						</p>
+					</article>
+					<article>
+						<h3>Clean elections and public accountability</h3>
+						<p>
+							Requires public-only election financing, bans corporate political influence, and
+							replaces private lobbying with public petition systems.
+						</p>
+					</article>
+					<article>
+						<h3>Institutional safeguards</h3>
+						<p>
+							Strengthens voting rights, reforms courts, weakens concentrated executive power,
+							cements secular government, and rebuilds civic education as democratic
+							infrastructure.
+						</p>
+					</article>
+				</div>
+
+				<h2>Implementation warning</h2>
+				<p>
+					The draft says plainly that this package cannot be implemented by a normal act of
+					Congress alone. It would require deep constitutional change through Article V or another
+					lawful constitutional path.
+				</p>
+				<p>
+					The proposal is prepared for discussion and refinement. It does not claim that every
+					provision could survive under the current Constitution without amendment.
+				</p>
+			</article>
+			<DocumentPreview title="Democratic Renewal and Citizen Stewardship Proposal" pdfHref={pdfHref} />
+		</div>
+	</section>
+</SiteLayout>

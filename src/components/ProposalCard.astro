@@ -1,0 +1,21 @@
+---
+interface Props {
+	title: string;
+	summary: string;
+	href: string;
+	pdfHref: string;
+	label: string;
+}
+
+const { title, summary, href, pdfHref, label } = Astro.props;
+---
+
+<article class="proposal-card">
+	<div class="proposal-label">{label}</div>
+	<h3><a href={href}>{title}</a></h3>
+	<p>{summary}</p>
+	<div class="card-actions">
+		<a class="text-link" href={href}>Read overview</a>
+		<a class="text-link" href={pdfHref}>Open PDF</a>
+	</div>
+</article>

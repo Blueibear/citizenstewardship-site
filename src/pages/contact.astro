@@ -1,0 +1,39 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout
+	title="Contact"
+	description="Contact information for Citizen Stewardship without forms, analytics, or backend collection."
+>
+	<PageHero
+		title="Contact"
+		lede="Citizen Stewardship keeps this site static. There is no contact form, tracking script, or backend message collection on this page."
+	/>
+
+	<section class="section tight">
+		<div class="container content-grid">
+			<div class="prose">
+				<h2>Current contact status</h2>
+				<p>
+					A verified public inbox or organizational contact channel has not been published in this
+					repository. Until one is added, use the public channel where this site was shared to ask
+					questions or deliver prepared feedback.
+				</p>
+				<p>
+					This avoids publishing an unverified address and avoids creating a form that appears to
+					send messages when no backend exists.
+				</p>
+			</div>
+			<aside class="callout">
+				<h3>Before reaching out</h3>
+				<p>
+					For proposal edits, prepare the proposal name, section, specific issue, suggested
+					revision, and any sources first.
+				</p>
+				<a class="button primary" href="/submit">View submission checklist</a>
+			</aside>
+		</div>
+	</section>
+</SiteLayout>
