@@ -31,6 +31,7 @@ The current site routes are:
 - `/about/`
 - `/contact/`
 - `/privacy/`
+- `/terms/`
 - `/404.html`
 
 ## Proposal PDFs
@@ -66,6 +67,14 @@ Site links to these GitHub Discussions categories should use `target="_blank"` a
 - Approved submissions can later be manually listed in the Approved Public Submissions area on the Community page.
 - Public discussion should remain constructive, nonpartisan, and grounded in improving the proposals.
 - The Submit page uses the full Citizen Stewardship Core Pillars list, not a shortened Core Principles list.
+
+## Terms of Use
+
+The `/terms/` page covers plain-English site rules, community conduct, public
+submissions, third-party services, downloadable proposal drafts, and submission
+permission. It should stay consistent with the static-site workflow, GitHub
+Discussions, Formspree contact handling, Cloudflare Pages hosting, and the
+Privacy Policy.
 
 ## Sharing
 

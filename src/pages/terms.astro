@@ -1,0 +1,171 @@
+---
+import PageHero from '../components/PageHero.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const contactEmail = 'contact@citizenstewardship.org';
+const contactMailto = 'mailto:contact@citizenstewardship.org?subject=Citizen%20Stewardship%20terms%20question';
+---
+
+<SiteLayout
+	title="Terms of Use"
+	description="Plain-English Terms of Use for Citizen Stewardship, including public discussion, submissions, proposal drafts, third-party services, and community conduct."
+>
+	<PageHero
+		title="Terms of Use"
+		lede="Plain-English rules for using Citizen Stewardship, participating in public discussion, and submitting ideas for civic reform."
+	/>
+
+	<section class="section tight">
+		<div class="container prose">
+			<p class="privacy-note">
+				Last updated: May 22, 2026. These terms are practical site rules, not legal advice.
+			</p>
+
+			<h2>Terms of Use</h2>
+			<p>
+				By using citizenstewardship.org, reading or downloading proposal documents,
+				joining public discussions, submitting ideas, or contacting the project, you agree
+				to use the site in a constructive and lawful way.
+			</p>
+			<p>
+				Citizen Stewardship is small, citizen-created, and public-facing. These terms are
+				meant to explain how the project works and what kind of participation belongs here.
+			</p>
+
+			<h2>Purpose of this project</h2>
+			<p>
+				Citizen Stewardship is a citizen-created public discussion project focused on
+				democratic renewal and civic reform in the United States.
+			</p>
+			<p>
+				The site exists to let people read, download, share, question, criticize, and
+				improve the proposals. The goal is public review and civic education, not private
+				casework, campaign work, payment processing, or user-account services.
+			</p>
+
+			<h2>Public discussion drafts, not legal advice</h2>
+			<p>
+				The proposal documents are public discussion drafts. They are not legal advice, do
+				not create an attorney-client relationship, and should not be treated as final
+				legislation, final constitutional language, or professional legal guidance.
+			</p>
+			<p>
+				The proposals may need legal review, technical revision, public debate,
+				constitutional analysis, fiscal analysis, and practical testing before anyone treats
+				them as ready for real-world use.
+			</p>
+
+			<h2>Community discussion and submissions</h2>
+			<p>
+				Public discussion and public proposal submissions happen through GitHub Discussions.
+				Users who post on GitHub are also subject to GitHub's own terms, rules, and privacy
+				policy.
+			</p>
+			<p>
+				Anything posted publicly in GitHub Discussions should be treated as public. Do not
+				post or submit private personal information, doxxing material, confidential
+				documents, passwords, financial information, medical information, private addresses,
+				private phone numbers, or anything you do not want public.
+			</p>
+
+			<h2>Submission permission</h2>
+			<p>
+				By submitting an idea, comment, correction, proposed edit, or reform proposal
+				through GitHub Discussions, the contact form, or email, you give Citizen
+				Stewardship permission to review, quote, summarize, discuss, adapt, publish, or
+				incorporate that submission into public project materials, with or without
+				attribution depending on the context, unless you clearly request otherwise. You
+				remain responsible for what you submit, and you should only submit material you have
+				the right to share.
+			</p>
+			<p>
+				If a submission is incorporated into project materials, it may be edited for
+				clarity, length, formatting, tone, or consistency. Citizen Stewardship is not
+				required to publish, approve, respond to, or adopt every submission.
+			</p>
+			<p>
+				If you want a correction, removal, or attribution change, email
+				<a href={contactMailto}>{contactEmail}</a>.
+			</p>
+
+			<h2>Approved submissions</h2>
+			<p>
+				Approved submissions do not mean final adoption or full endorsement. Approval means
+				the submission appears serious, relevant, constructive, rights-compatible, and worth
+				public review.
+			</p>
+			<p>
+				Approved material can still be questioned, revised, declined, moved, summarized, or
+				removed as the project develops.
+			</p>
+
+			<h2>Community conduct</h2>
+			<p>
+				Disagreement is welcome when it is constructive, specific, and aimed at improving
+				the work.
+			</p>
+			<p>Participation should not include:</p>
+			<ul class="warning-list">
+				<li>Threats, calls for violence, or encouragement of harm.</li>
+				<li>Harassment, doxxing, spam, personal attacks, or conspiracy spam.</li>
+				<li>Racism, religious bigotry, anti-LGBTQ attacks, sexism, or disability-based abuse.</li>
+				<li>Bad-faith partisan trolling or corporate astroturfing.</li>
+				<li>Proposals that remove equal rights from one group to benefit another.</li>
+			</ul>
+
+			<h2>Downloadable proposal documents</h2>
+			<p>
+				The downloadable PDFs are provided for public review, sharing, criticism, and civic
+				discussion. The documents may be updated over time.
+			</p>
+			<p>
+				When referencing the proposals, use the current version available on
+				citizenstewardship.org. Citizen Stewardship makes no guarantee that every idea is
+				legally valid, politically feasible, complete, or error-free.
+			</p>
+
+			<h2>Third-party services</h2>
+			<p>
+				Citizen Stewardship uses GitHub Discussions for public discussion and submissions,
+				Formspree for contact form processing, and Cloudflare Pages for hosting and
+				delivery. The site also links to social platforms when users follow official
+				channels or share pages.
+			</p>
+			<p>
+				The contact form is processed by Formspree. Formspree has its own terms and privacy
+				policy. Cloudflare hosts and delivers the site, and Cloudflare has its own terms and
+				privacy policy.
+			</p>
+			<p>
+				Once you leave citizenstewardship.org or interact with GitHub, Formspree,
+				Cloudflare, or social platforms, those services' own terms and privacy policies
+				apply.
+			</p>
+
+			<h2>No guarantees</h2>
+			<p>
+				The site and documents are provided for public discussion and civic education. They
+				may contain errors, outdated material, incomplete ideas, or proposals that require
+				legal review.
+			</p>
+			<p>
+				Citizen Stewardship does not guarantee uninterrupted access, complete accuracy, legal
+				validity, political feasibility, or that every suggestion will be reviewed or used.
+			</p>
+
+			<h2>Changes to the project</h2>
+			<p>
+				Citizen Stewardship may change, remove, revise, or reorganize pages, PDFs,
+				comments, links, categories, or processes. The project may also revise these Terms
+				of Use when the site, services, or public workflow changes.
+			</p>
+
+			<h2>Contact</h2>
+			<p>
+				For questions about these terms, corrections, removals, or attribution changes,
+				email <a href={contactMailto}>{contactEmail}</a>. Direct and private contact can
+				also happen through the contact form or the same public contact email.
+			</p>
+		</div>
+	</section>
+</SiteLayout>
