@@ -122,23 +122,17 @@ body:
     validations:
       required: false
 
-  - type: checkboxes
+    - type: checkboxes
     id: confirmation
     attributes:
-      label: Submission checklist (required)
+      label: Submission agreement (required)
       description: Please confirm before submitting.
       options:
         - label: >-
-            This submission is intended to be constructive and related to
-            Proposal One, Proposal Two, or both.
-          required: true
-        - label: >-
-            This submission generally supports or seriously engages with the
-            Citizen Stewardship Core Pillars.
-          required: true
-        - label: >-
-            This submission does not include private personal information,
-            doxxing, threats, harassment, spam, or hateful content.
-          required: true
-        - label: I understand this will be public on GitHub Discussions.
+            I understand that this submission will be public on GitHub
+            Discussions, is intended to be constructive and related to Proposal
+            One, Proposal Two, or both, generally supports or seriously engages
+            with the Citizen Stewardship Core Pillars, and does not include
+            private personal information, doxxing, threats, harassment, spam,
+            or hateful content.
           required: true
