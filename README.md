@@ -45,7 +45,7 @@ Do not move these files unless the page links are updated intentionally.
 
 ## GitHub Discussions
 
-Use GitHub Discussions as the public forum for proposal review and citizen submissions because it provides a transparent, organized public record. People do not need to be coders to participate.
+Use GitHub Discussions as the public forum for proposal review and citizen submissions because it provides a transparent, organized public record. People do not need to be coders to participate, but GitHub does require a free account to post.
 
 The public categories are:
 
@@ -55,6 +55,8 @@ The public categories are:
 - [Community Submissions](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions)
 - [Site Improvements](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements)
 - [General Civic Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion)
+
+Public Submissions uses a GitHub Discussion Category Form stored at `.github/DISCUSSION_TEMPLATE/public-submissions.yml`. The filename must match the `public-submissions` category slug.
 
 Site links to these GitHub Discussions categories should use `target="_blank"` and `rel="noopener noreferrer"` so they open in a new browser tab safely.
 

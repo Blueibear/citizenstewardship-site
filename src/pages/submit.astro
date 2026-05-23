@@ -54,20 +54,6 @@ const shouldNotSubmit = [
 	'Proposals that remove rights from one group to benefit another.',
 ];
 
-const requiredFormat = [
-	'Title',
-	'Which proposal or section it affects',
-	'Problem being addressed',
-	'Proposed change',
-	'Why it is necessary',
-	'Immediate benefits',
-	'Risks or downsides',
-	'Long-term benefits',
-	'Who may support it',
-	'Who may oppose it',
-	'Sources or examples',
-	'Suggested wording if available',
-];
 ---
 
 <SiteLayout
@@ -121,7 +107,7 @@ const requiredFormat = [
 				<p>
 					Public discussions and proposal submissions are hosted through GitHub Discussions
 					because it provides a transparent, organized public record. You do not need to be a
-					coder to participate.
+					coder to participate, but GitHub does require a free account to post.
 				</p>
 
 				<h2>Core Pillars</h2>
@@ -160,14 +146,23 @@ const requiredFormat = [
 	<section class="section surface-band">
 		<div class="container content-grid">
 			<div class="prose">
-				<h2>Required submission format</h2>
+				<h2>Guided submission form</h2>
 				<p>
-					Use this structure so readers can understand the proposal, test the reasoning, and
-					compare likely benefits against risks.
+					Public submissions use a guided GitHub form. The form asks for the basics
+					needed to understand and evaluate an idea: a title, which proposal it applies to,
+					the problem being addressed, the proposed change, and why the change is
+					necessary.
 				</p>
-				<ol class="format-list">
-					{requiredFormat.map((item) => <li>{item}</li>)}
-				</ol>
+				<p>
+					Optional fields allow contributors to add immediate benefits, risks, long-term
+					impacts, sources, examples, or suggested wording. You do not need to write like a
+					lawyer or policy expert. The goal is to make serious ideas easier to understand,
+					discuss, and improve.
+				</p>
+				<p>
+					Submissions should still be constructive and connected to Proposal One, Proposal
+					Two, or both.
+				</p>
 			</div>
 			<aside class="info-panel">
 				<h3>Review process</h3>

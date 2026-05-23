@@ -1,0 +1,127 @@
+name: Public Submission
+description: Submit a proposed reform change, addition, correction, or idea for Citizen Stewardship.
+title: "[Submission]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve Citizen Stewardship.
+
+        Use this form to submit a proposed reform change, addition, correction, or idea related to Proposal One, Proposal Two, or both.
+
+        You do not need to be a coder to participate. GitHub is being used here because it creates a transparent, organized public record. GitHub does require a free account to post a discussion.
+
+        Your submission does not have to be perfect, professionally written, or backed by a full research paper. Opinion-based submissions are welcome as long as they are constructive, specific, rights-respecting, and connected to one or both proposals.
+
+        Sources, examples, and suggested wording are helpful, but optional.
+
+        Do not include private personal information, doxxing material, passwords, financial information, medical information, private addresses, private phone numbers, or anything you do not want public.
+
+  - type: input
+    id: submission-title
+    attributes:
+      label: Submission title (required)
+      description: Give your idea a short, clear title.
+      placeholder: "Example: Add stronger public education funding safeguards"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-proposal
+    attributes:
+      label: Which proposal does this affect? (required)
+      description: Choose the best fit.
+      options:
+        - Proposal One
+        - Proposal Two
+        - Both proposals
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to address? (required)
+      description: Explain the issue, gap, weakness, or concern.
+      placeholder: Describe the problem clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed change (required)
+      description: What should be added, removed, clarified, or changed?
+      placeholder: Describe your proposed change.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why-necessary
+    attributes:
+      label: Why is this necessary? (required)
+      description: Explain why this change would improve the proposal or project.
+      placeholder: Explain why this matters.
+    validations:
+      required: true
+
+  - type: textarea
+    id: immediate-benefits
+    attributes:
+      label: Immediate positive impacts (optional)
+      description: What could improve quickly if this idea were adopted?
+      placeholder: Optional, but helpful.
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Immediate risks or downsides (optional)
+      description: What could go wrong, be difficult, or create tradeoffs?
+      placeholder: Optional, but helpful.
+    validations:
+      required: false
+
+  - type: textarea
+    id: long-term-benefits
+    attributes:
+      label: Long-term benefits (optional)
+      description: What would this improve over time?
+      placeholder: Optional, but helpful.
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources, examples, or evidence (optional)
+      description: Add links, examples, laws, studies, state/local models, or real-world references if available. This is encouraged but not required.
+      placeholder: Links or examples are helpful, but not required.
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested-wording
+    attributes:
+      label: Suggested wording, if available (optional)
+      description: If you have exact wording you want considered, include it here. This is optional.
+      placeholder: Optional exact wording.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Submission checklist (required)
+      description: Please confirm before submitting.
+      options:
+        - label: This submission is intended to be constructive and related to Proposal One, Proposal Two, or both.
+          required: true
+        - label: This submission generally supports or seriously engages with the Citizen Stewardship Core Pillars.
+          required: true
+        - label: This submission does not include private personal information, doxxing, threats, harassment, spam, or hateful content.
+          required: true
+        - label: I understand this will be public on GitHub Discussions.
+          required: true
