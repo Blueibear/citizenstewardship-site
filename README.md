@@ -45,14 +45,14 @@ Do not move these files unless the page links are updated intentionally.
 
 ## GitHub Discussions
 
-Use GitHub Discussions as the public forum for proposal review and citizen submissions.
+Use GitHub Discussions as the public forum for proposal review and citizen submissions because it provides a transparent, organized public record. People do not need to be coders to participate.
 
 The public categories are:
 
 - [Proposal One Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-one-discussion)
 - [Proposal Two Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-two-discussion)
 - [Public Submissions](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/public-submissions)
-- [Approved Submissions](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions)
+- [Community Submissions](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions)
 - [Site Improvements](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements)
 - [General Civic Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion)
 
@@ -62,9 +62,9 @@ Site links to these GitHub Discussions categories should use `target="_blank"` a
 
 - New suggestions go into Public Submissions.
 - Review submissions for relevance, seriousness, nonpartisanship, rights compatibility, and basic factual grounding.
-- Serious, relevant, nonpartisan, rights-compatible suggestions can be moved or copied to Approved Submissions.
-- Approval does not mean final adoption or full endorsement.
-- Approved submissions can later be manually listed in the Approved Public Submissions area on the Community page.
+- Serious, relevant, nonpartisan, rights-compatible suggestions can be moved or copied to Community Submissions.
+- Review does not mean final adoption or full endorsement.
+- Community submissions can later be manually listed in the Community Submissions area on the Community page.
 - Public discussion should remain constructive, nonpartisan, and grounded in improving the proposals.
 - The Submit page uses the full Citizen Stewardship Core Pillars list, not a shortened Core Principles list.
 

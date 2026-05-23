@@ -6,7 +6,7 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 
 const publicSubmissionsUrl =
 	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/public-submissions';
-const approvedSubmissionsUrl =
+const communitySubmissionsUrl =
 	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions';
 const siteImprovementsUrl =
 	'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements';
@@ -89,11 +89,11 @@ const requiredFormat = [
 			</a>
 			<a
 				class="button"
-				href={approvedSubmissionsUrl}
+				href={communitySubmissionsUrl}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				View Approved Submissions
+				View Community Submissions
 			</a>
 			<a class="button" href={privateNoteUrl}>Email a private note</a>
 		</div>
@@ -117,6 +117,11 @@ const requiredFormat = [
 					submission identifies a specific problem, proposes a concrete improvement, and gives
 					readers enough context to evaluate the idea fairly within the American civic and
 					legal system.
+				</p>
+				<p>
+					Public discussions and proposal submissions are hosted through GitHub Discussions
+					because it provides a transparent, organized public record. You do not need to be a
+					coder to participate.
 				</p>
 
 				<h2>Core Pillars</h2>
@@ -167,12 +172,12 @@ const requiredFormat = [
 			<aside class="info-panel">
 				<h3>Review process</h3>
 				<p>
-					Submissions are reviewed for relevance, seriousness, nonpartisanship, rights
-					compatibility, and basic factual grounding.
+					Submissions may be reviewed for relevance, seriousness, safety, and basic
+					alignment with the project's community rules.
 				</p>
 				<p>
-					Approval does not mean automatic endorsement. Approved submissions will be listed in
-					the Approved Submissions area in the Community section.
+					Review does not mean endorsement. Listing a submission in the Community
+					Submissions area does not mean Citizen Stewardship fully agrees with it.
 				</p>
 				<p>
 					Strong criticism is welcome if it is specific, constructive, and honest.
@@ -198,8 +203,9 @@ const requiredFormat = [
 				<div>
 					<h2>Ready to share a suggestion?</h2>
 					<p>
-						Public suggestions should go through GitHub Discussions. Use email only for a
-						private note or a concern that should not be posted publicly.
+						Public suggestions should go through GitHub Discussions so the conversation can
+						stay organized and visible. Use email only for a private note or a concern that
+						should not be posted publicly.
 					</p>
 				</div>
 				<div class="button-row">
@@ -213,11 +219,11 @@ const requiredFormat = [
 					</a>
 					<a
 						class="button"
-						href={approvedSubmissionsUrl}
+						href={communitySubmissionsUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						View Approved Submissions
+						View Community Submissions
 					</a>
 					<a class="button" href={privateNoteUrl}>Email a private note</a>
 				</div>

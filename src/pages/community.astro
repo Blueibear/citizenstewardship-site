@@ -11,7 +11,7 @@ const discussionCategories = {
 		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-two-discussion',
 	publicSubmissions:
 		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/public-submissions',
-	approvedSubmissions:
+	communitySubmissions:
 		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions',
 	siteImprovements:
 		'https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements',
@@ -39,10 +39,10 @@ const forumSections = [
 		href: discussionCategories.publicSubmissions,
 	},
 	{
-		title: 'Approved Submissions',
+		title: 'Community Submissions',
 		description:
-			'Read submissions that have been reviewed for seriousness, relevance, nonpartisanship, and basic factual grounding.',
-		href: discussionCategories.approvedSubmissions,
+			'Read submissions that have been reviewed for relevance, seriousness, safety, and basic alignment with the community rules.',
+		href: discussionCategories.communitySubmissions,
 	},
 	{
 		title: 'Site Improvements',
@@ -81,11 +81,11 @@ const shareText =
 			</a>
 			<a
 				class="button"
-				href={discussionCategories.approvedSubmissions}
+				href={discussionCategories.communitySubmissions}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Approved submissions
+				Community Submissions
 			</a>
 		</div>
 	</PageHero>
@@ -117,8 +117,10 @@ const shareText =
 				<div class="social-inline">
 					<h2>Broader updates</h2>
 					<p>
-						Public discussion happens through GitHub Discussions. Broader updates may also
-						appear on Substack and the official social channels.
+						Public discussion happens through GitHub Discussions because it provides a
+						transparent, organized public record. You do not need to be a coder to
+						participate. Broader updates may also appear on Substack and the official
+						social channels.
 					</p>
 					<SocialLinks />
 				</div>
@@ -142,8 +144,8 @@ const shareText =
 				<h2>Forum sections</h2>
 				<p>
 					These links point directly to the public GitHub Discussions categories for each
-					proposal, submission path, and site improvement topic. GitHub Discussions remains
-					the public review forum for proposal work.
+					proposal, submission path, and site improvement topic. GitHub is being used as an
+					organized public forum, not because the project is only for software developers.
 				</p>
 			</div>
 			<div class="forum-grid">
@@ -166,34 +168,34 @@ const shareText =
 		</div>
 	</section>
 
-	<section id="approved-public-submissions" class="section">
+	<section id="community-submissions" class="section">
 		<div class="container content-grid">
 			<div class="prose">
-				<h2>Approved Public Submissions</h2>
+				<h2>Community Submissions</h2>
 				<p>
-					Approved submissions are reform ideas or proposed additions that have been
-					reviewed for seriousness, relevance, nonpartisanship, and basic factual grounding.
-					Approval does not mean full endorsement. It means the idea is worth public
-					review.
+					Community submissions are reform ideas or proposed additions that may be reviewed
+					for relevance, seriousness, safety, and basic alignment with the project's
+					community rules. Review does not mean endorsement, and listing a submission does
+					not mean Citizen Stewardship fully agrees with it.
 				</p>
 				<p>
-					This area is intentionally structured so manually maintained approved submission
-					cards can replace this summary when submissions are ready to publish.
+					This area is intentionally structured so manually maintained submission cards can
+					replace this summary when submissions are ready to list.
 				</p>
 			</div>
-			<aside class="approved-placeholder">
-				<h3>No approved submissions have been published yet.</h3>
+			<aside class="submission-placeholder">
+				<h3>No community submissions have been listed yet.</h3>
 				<p>
 					Use the Submit page to prepare a proposal suggestion for public review through
 					GitHub Discussions.
 				</p>
 				<a
 					class="button primary"
-					href={discussionCategories.approvedSubmissions}
+					href={discussionCategories.communitySubmissions}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					View Approved Submissions
+					View Community Submissions
 				</a>
 				<a class="button" href="/submit">Prepare a submission</a>
 			</aside>
