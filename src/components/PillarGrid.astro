@@ -6,29 +6,118 @@ interface Props {
 const { compact = false } = Astro.props;
 
 const pillars = [
-	'Citizens over corporations',
-	'Money out of politics',
-	'Voting rights and election protection',
-	'Anti-corruption and public accountability',
-	'Public education and civic education',
-	'Tax code reform',
-	'Equality for all citizens',
-	'Humane immigration reform and due process',
-	'Secular government',
-	'Transparency and plain-language government',
-	'Citizen participation and review',
-	'Media and platform accountability',
-	'Antitrust and anti-monopoly reform',
-	'Executive power limits',
-	'Court ethics and institutional safeguards',
-	'Digital rights and privacy',
-	'Labor, housing, healthcare, and economic stability',
-	'Criminal justice reform',
-	'Climate and environmental responsibility',
-	'Truth, history, and reconciliation',
+	{
+		title: 'Citizens over corporations',
+		explanation:
+			'Government should answer to natural persons, not corporations, donors, lobbyists, trade groups, or party machinery.',
+	},
+	{
+		title: 'Money out of politics',
+		explanation:
+			'Public power should not be buyable through campaign donations, dark money, super PACs, lobbying access, gifts, or post-office cash-outs.',
+	},
+	{
+		title: 'Voting rights and election protection',
+		explanation:
+			'Voting should be secure, accessible, protected from suppression, and insulated from election subversion.',
+	},
+	{
+		title: 'Anti-corruption and public accountability',
+		explanation:
+			'Public office should be treated as temporary stewardship, not a wealth-building strategy or loyalty reward system.',
+	},
+	{
+		title: 'Public education and civic education',
+		explanation:
+			'Public education, civics, history, media literacy, and critical thinking are democracy infrastructure.',
+	},
+	{
+		title: 'Tax code reform',
+		explanation:
+			'The tax system should be simplified, made fairer, and stripped of loopholes that let the wealthy and powerful avoid obligations ordinary people cannot avoid.',
+	},
+	{
+		title: 'Equality for all citizens',
+		explanation:
+			'Rights should not depend on race, religion, gender, sexuality, disability, geography, wealth, or political identity.',
+	},
+	{
+		title: 'Secular government',
+		explanation:
+			'Government should remain neutral toward religion and nonreligion. Private belief is protected, but public law should not be governed by religious doctrine.',
+	},
+	{
+		title: 'Transparency and plain-language government',
+		explanation:
+			'Laws, budgets, public influence, and government decisions should be understandable to regular people.',
+	},
+	{
+		title: 'Citizen participation and review',
+		explanation:
+			'Ordinary citizens should have a formal role in reviewing, questioning, and improving government decisions.',
+	},
+	{
+		title: 'Media and platform accountability',
+		explanation:
+			'Media and social platforms should not knowingly profit from civic falsehoods, manipulation, or algorithmic amplification of misinformation.',
+	},
+	{
+		title: 'Antitrust and anti-monopoly reform',
+		explanation:
+			'Excessive corporate concentration, especially in media, technology, housing, healthcare, and essentials, becomes political power and should be checked.',
+	},
+	{
+		title: 'Executive power limits',
+		explanation:
+			'Emergency powers, war powers, pardons, and prosecution influence should be limited so one person cannot bend government into personal rule.',
+	},
+	{
+		title: 'Court ethics and institutional safeguards',
+		explanation:
+			'Courts need stronger ethics, transparency, recusal rules, and legitimacy protections.',
+	},
+	{
+		title: 'Digital rights and privacy',
+		explanation:
+			'Modern rights must account for AI, data brokers, surveillance, biometrics, deepfakes, algorithmic manipulation, and ownership of personal data.',
+	},
+	{
+		title: 'Labor, housing, healthcare, and economic stability',
+		explanation:
+			'Democracy is weaker when ordinary people are economically terrified, medically trapped, underpaid, or unable to afford shelter.',
+	},
+	{
+		title: 'Criminal justice reform',
+		explanation:
+			'A justice system that treats poverty, race, and power differently destroys legitimacy.',
+	},
+	{
+		title: 'Climate and environmental responsibility',
+		explanation:
+			'A functioning government has to protect clean air, clean water, livable communities, and future generations.',
+	},
+	{
+		title: 'Truth, history, and reconciliation',
+		explanation:
+			'The country cannot repair what it refuses to tell the truth about, including slavery, Jim Crow, Indigenous dispossession, redlining, and other state-backed harms.',
+	},
+	{
+		title: 'Humane immigration reform and due process',
+		explanation:
+			'Immigration policy should be lawful, fair, humane, and administratively functional, with dignity, due process, family unity, labor protection, and international obligations at its center.',
+	},
 ];
 ---
 
 <ul class={compact ? 'pillar-grid compact' : 'pillar-grid'} aria-label="Citizen Stewardship core pillars">
-	{pillars.map((pillar) => <li class="pillar-card"><span>{pillar}</span></li>)}
+	{
+		pillars.map((pillar) => (
+			<li class="pillar-card">
+				<details>
+					<summary>{pillar.title}</summary>
+					<p>{pillar.explanation}</p>
+				</details>
+			</li>
+		))
+	}
 </ul>
