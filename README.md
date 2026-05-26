@@ -1,6 +1,6 @@
 # Citizen Stewardship
 
-Citizen Stewardship is a nonpartisan, citizen-created public project for American democratic renewal, practical reform, and civic responsibility.
+Citizen Stewardship is a nonpartisan, citizen-created civic project for American democratic renewal, practical reform, and public discussion of reform drafts.
 
 The repo remains an Astro static site deployed through Cloudflare Pages at `https://citizenstewardship.org`. It does not include:
 
