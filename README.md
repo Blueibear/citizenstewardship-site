@@ -1,132 +1,126 @@
 # Citizen Stewardship
 
-Citizen Stewardship is a nonpartisan, citizen-created civic project for American democratic renewal, practical reform, and public discussion of reform drafts.
+[**Visit CitizenStewardship.org**](https://citizenstewardship.org)
 
-The repo remains an Astro static site deployed through Cloudflare Pages at `https://citizenstewardship.org`. It does not include:
+![Citizen Stewardship](public/assets/images/citizen-stewardship-social.png)
 
-- custom backend functions
-- analytics
-- secrets
-- database code
-- client-side tracking
+Citizen Stewardship is a nonpartisan, citizen-created civic project focused on American democratic renewal, practical reform, public accountability, civil liberties, and informed civic participation.
 
-Public discussion runs through GitHub Discussions. The public contact email is `contact@citizenstewardship.org`, and the contact page uses the Formspree endpoint currently configured in `src/pages/contact.astro`.
+**Created, designed, and developed by James Ramsey.**
 
-Official social links:
+## Project overview
 
-- Substack: <https://citizenstewardship.substack.com/>
-- Facebook: <https://facebook.com/CitizenStewardship>
-- Bluesky: <https://bsky.app/profile/citizenstewardship.org>
-- X: <https://x.com/CitizenStewards>
+Citizen Stewardship was built to turn complex civic reform ideas into a public, readable, and participatory digital project. The site publishes two reform proposals, provides plain-language context around them, and gives citizens structured ways to question, criticize, and improve the work.
 
-## Pages
+The project is intentionally independent. It is not a political party, PAC, campaign committee, government entity, or formal nonprofit organization.
 
-The current site routes are:
+## What I built
 
-- `/`
-- `/proposal-one/`
-- `/proposal-two/`
-- `/community/`
-- `/submit/`
-- `/about/`
-- `/contact/`
-- `/privacy/`
-- `/terms/`
-- `/404.html`
+- A custom responsive website built with Astro and TypeScript.
+- A component-based design system for consistent navigation, page layouts, proposal cards, calls to action, social links, and sharing tools.
+- Two public proposal hubs with downloadable PDF versions of the full reform drafts.
+- A public review and submission workflow using GitHub Discussions.
+- A structured GitHub Discussion form for citizen-submitted reform ideas and corrections.
+- A contact workflow using Formspree without requiring a custom application backend.
+- Search and social metadata including canonical URLs, Open Graph metadata, social preview imagery, and sitemap generation.
+- Native sharing and copy-link functionality without third-party sharing widgets.
+- Privacy-conscious architecture that avoids advertising trackers, analytics scripts, user accounts, and a custom user database.
 
-## Proposal PDFs
+## Architecture
 
-The public PDFs are stored under `public/assets/pdfs/` and are referenced by these exact public paths:
+Citizen Stewardship is designed as a static-first site. The public website does not require its own application server, user account system, or database.
 
-- `/assets/pdfs/democratic-renewal-full-proposal.pdf`
-- `/assets/pdfs/feasible-democratic-reform-proposal.pdf`
+Third-party services are limited to specific public-facing functions:
 
-Do not move these files unless the page links are updated intentionally.
+- **Cloudflare** for hosting and delivery.
+- **GitHub Discussions** for public discussion and proposal submissions.
+- **Formspree** for private contact-form delivery.
 
-## GitHub Discussions
+The site itself does not intentionally use advertising analytics, client-side tracking, or tracking cookies.
 
-Use GitHub Discussions as the public forum for proposal review and citizen submissions because it provides a transparent, organized public record. People do not need to be coders to participate, but GitHub does require a free account to post.
+## Tech stack
 
-The public categories are:
+- Astro 6
+- TypeScript
+- HTML and CSS
+- Cloudflare
+- GitHub Discussions
+- Formspree
 
-- [Proposal One Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-one-discussion)
-- [Proposal Two Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/proposal-two-discussion)
-- [Public Submissions](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/public-submissions)
-- [Community Submissions](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/approved-submissions)
-- [Site Improvements](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/site-improvements)
-- [General Civic Discussion](https://github.com/Blueibear/citizenstewardship-site/discussions/categories/general-civic-discussion)
+## Public participation
 
-Public Submissions uses a GitHub Discussion Category Form stored at `.github/DISCUSSION_TEMPLATE/public-submissions.yml`. The filename must match the `public-submissions` category slug.
+GitHub Discussions is used as the public forum because it provides a transparent and organized record of proposal feedback. The repository includes a structured submission form at `.github/DISCUSSION_TEMPLATE/public-submissions.yml` so participants can submit ideas without needing to understand the codebase.
 
-Site links to these GitHub Discussions categories should use `target="_blank"` and `rel="noopener noreferrer"` so they open in a new browser tab safely.
+Public discussion categories include:
 
-## Submission Moderation Workflow
+- Proposal One Discussion
+- Proposal Two Discussion
+- Public Submissions
+- Community Submissions
+- Site Improvements
+- General Civic Discussion
 
-- New suggestions go into Public Submissions.
-- Review submissions for relevance, seriousness, nonpartisanship, rights compatibility, and basic factual grounding.
-- Serious, relevant, nonpartisan, rights-compatible suggestions can be moved or copied to Community Submissions.
-- Review does not mean final adoption or full endorsement.
-- Community submissions can later be manually listed in the Community Submissions area on the Community page.
-- Public discussion should remain constructive, nonpartisan, and grounded in improving the proposals.
-- The Submit page uses the full Citizen Stewardship Core Pillars list, not a shortened Core Principles list.
+## Key site routes
 
-## Terms of Use
+- `/` - project overview
+- `/proposal-one/` - long-range democratic renewal proposal
+- `/proposal-two/` - practical reform proposal
+- `/community/` - public participation and discussion
+- `/submit/` - submission guidance
+- `/about/` - project background
+- `/contact/` - contact options
+- `/privacy/` - privacy policy
+- `/terms/` - terms of use
 
-The `/terms/` page covers plain-English site rules, community conduct, public
-submissions, third-party services, downloadable proposal drafts, and submission
-permission. It should stay consistent with the static-site workflow, GitHub
-Discussions, Formspree contact handling, Cloudflare Pages hosting, and the
-Privacy Policy.
+## Proposal documents
 
-## Sharing
+The current public proposal PDFs are stored in `public/assets/pdfs/`:
 
-Share buttons are implemented locally in `src/components/ShareButtons.astro`. They use the native Web Share API when available, provide a local copy-link fallback, and include direct Facebook, X, and Bluesky share/compose links. No third-party share widgets, analytics, or tracking scripts are used.
+- `democratic-renewal-full-proposal.pdf`
+- `feasible-democratic-reform-proposal.pdf`
 
-## Site Images and Metadata
+## Local development
 
-The shared Citizen Stewardship graphic is stored at:
-
-- `public/assets/images/citizen-stewardship-social.png`
-
-The site uses that image in the header, homepage, and Open Graph/social sharing metadata. The public social image URL is:
-
-- `https://citizenstewardship.org/assets/images/citizen-stewardship-social.png`
-
-The browser tab icon remains a simplified `public/favicon.svg` mark because the full social graphic is too detailed to read well at tiny favicon sizes. A simplified PNG favicon can be added later if a raster icon is needed.
-
-## Contact Form Setup
-
-Do not change the contact form endpoint unless contact handling is intentionally being updated. The public contact email is `contact@citizenstewardship.org`.
-
-## Local Development
-
-Install dependencies:
+Requires Node.js 22 or later.
 
 ```bash
-npm install
-```
-
-Start the local Astro dev server:
-
-```bash
+npm ci
 npm run dev
 ```
 
-Build the static site:
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-The production output is written to `dist/`.
+The generated site is written to `dist/`.
 
-## Project Structure
+## Project structure
 
 ```text
-src/components/     Shared Astro components
-src/layouts/        Site layout wrapper
-src/pages/          Static routes
-src/styles/         Global CSS
-public/assets/images/ Shared public graphics
-public/assets/pdfs/ Public proposal PDFs
+.github/                 GitHub community and automation configuration
+src/components/          Reusable Astro components
+src/layouts/             Shared site layouts
+src/pages/               Public site routes
+src/styles/              Global styles
+public/assets/images/    Project graphics
+public/assets/pdfs/      Public proposal documents
+public/fonts/            Locally served font files
 ```
+
+## Privacy and security
+
+Local environment files and Wrangler development variables are excluded by `.gitignore`. Do not commit credentials, API keys, private contact data, or other secrets to this repository.
+
+The Formspree form identifier used by the public contact page is client-side configuration and is intentionally visible in the source.
+
+## Licensing
+
+The original source code in this repository is available under the terms described in [`LICENSE`](LICENSE).
+
+That source-code license does **not** automatically grant reuse rights to Citizen Stewardship proposal text, editorial content, PDFs, logos, graphics, branding, or third-party materials. See the license file for details.
+
+## Contact
+
+Public project email: **contact@citizenstewardship.org**
